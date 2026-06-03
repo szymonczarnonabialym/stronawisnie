@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sad Owocowy — Świeże Czereśnie i Wiśnie Prosto z Sadu</title>
+  <meta name="description" content="Najwyższej jakości czereśnie i wiśnie prosto z naszego sadu. Świeże, soczyste owoce zbierane ręcznie — naturalny smak, który zachwyca." />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>🍒</text></svg>" />
+</head>
+<body>
+
+  <!-- ═══════ HEADER ═══════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <span class="logo-icon">🍒</span>
+        <span class="logo-text">Sad<span>Owocowy</span></span>
+      </a>
+
+      <nav class="nav" id="mainNav">
+        <a href="#home" class="nav-link active" data-section="home">Strona główna</a>
+        <a href="#oferta" class="nav-link" data-section="oferta">Oferta</a>
+        <a href="#o-nas" class="nav-link" data-section="o-nas">O nas</a>
+        <a href="#kontakt" class="nav-link" data-section="kontakt">Kontakt</a>
+        <button class="nav-cta" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">
+          📞 Zamów teraz
+        </button>
+      </nav>
+
+      <button class="hamburger" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero section" id="home">
+    <div class="hero-bg">
+      <img src="images/traktor_sad.jpg" alt="Nasz sad owocowy - widok z traktora" />
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Sezon 2026 — świeże zbiory!
+      </div>
+      <h1 class="hero-title">
+        Smak lata prosto<br />
+        <span class="highlight">z naszego sadu</span>
+      </h1>
+      <p class="hero-subtitle">
+        Zerwane rano, u Ciebie po południu. Żadnych pośredników, żadnych magazynów —
+        tylko owoce prosto z drzewa do Twoich rąk.
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="document.getElementById('oferta').scrollIntoView({behavior:'smooth'})">
+          🍒 Zobacz ofertę
+        </button>
+        <button class="btn btn-outline" onclick="document.getElementById('o-nas').scrollIntoView({behavior:'smooth'})">
+          Poznaj nasz sad →
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════ STATS ═══════ -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-icon">🌳</div>
+          <div class="stat-value">1000+</div>
+          <div class="stat-label">Drzew owocowych</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon">📅</div>
+          <div class="stat-value">40 lat</div>
+          <div class="stat-label">Tradycji od 1986 r.</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon">🍒</div>
+          <div class="stat-value">5</div>
+          <div class="stat-label">Odmian owoców</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Najwyższej jakości</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ DLACZEGO OD ROLNIKA ═══════ -->
+  <section class="freshness-section section" id="dlaczego">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">⏱️ Dlaczego kupować bezpośrednio od rolnika?</div>
+        <h2 class="section-title">Zastanów się, co tak naprawdę<br />kupujesz na targu</h2>
+        <p class="section-desc">
+          Zanim czereśnia trafi na targowy stragan, przechodzi przez tyle rąk,
+          że traci świeżość, smak i połowę witamin. My to zmieniamy.
+        </p>
+      </div>
+
+      <!-- ── SCHEMAT BLOKOWY: Droga owoców z targu ── -->
+      <div class="flow-section reveal">
+        <h3 class="flow-title">
+          <span class="flow-title-icon">🏪</span>
+          Droga czereśni z targu — ile rąk dotyka Twój owoc?
+        </h3>
+        <p class="flow-subtitle">
+          Każdy etap to utrata świeżości, kolejne uszkodzenia mechaniczne i czas w nieoptymalnych warunkach.
+          Owoc, który kupujesz na targu, może mieć nawet <strong>2 tygodnie od zerwania</strong>.
+        </p>
+
+        <div class="flow-chain">
+          <div class="flow-step bad">
+            <div class="flow-step-icon">🌳</div>
+            <div class="flow-step-label">Zerwanie<br /><small>Dzień 1</small></div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step bad">
+            <div class="flow-step-icon">📦</div>
+            <div class="flow-step-label">Skup / Giełda<br /><small>Dzień 2–3</small></div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step bad">
+            <div class="flow-step-icon">🤝</div>
+            <div class="flow-step-label">Pośrednik<br /><small>Dzień 4–5</small></div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step bad">
+            <div class="flow-step-icon">❄️</div>
+            <div class="flow-step-label">Chłodnia<br /><small>Dzień 5–10</small></div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step bad">
+            <div class="flow-step-icon">🚛</div>
+            <div class="flow-step-label">Transport<br /><small>Dzień 10–12</small></div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step bad">
+            <div class="flow-step-icon">🏪</div>
+            <div class="flow-step-label">Sprzedawca<br /><small>Dzień 12–14</small></div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step bad final">
+            <div class="flow-step-icon">😕</div>
+            <div class="flow-step-label">Twój stół<br /><small class="bad-text">Do 14 dni!</small></div>
+          </div>
+        </div>
+
+        <div class="flow-warning">
+          ⚠️ Każdy pośrednik to kolejne przesypywanie, transport i czas w plastikowym opakowaniu.
+          Owoce tracą jędrność, aromat i witaminy. Często są zbierane <strong>niedojrzałe</strong>,
+          żeby w ogóle przetrwały tę drogę. To dlatego targowe czereśnie często smakują jak woda
+          — bo zostały zerwane zielone i dojrzewały w chłodni, a nie na słońcu.
+        </div>
+      </div>
+
+      <!-- VS Divider -->
+      <div class="vs-divider reveal">
+        <div class="vs-line"></div>
+        <div class="vs-badge-large">VS</div>
+        <div class="vs-line"></div>
+      </div>
+
+      <!-- ── SCHEMAT BLOKOWY: Prosto z sadu ── -->
+      <div class="flow-section flow-good reveal">
+        <h3 class="flow-title good">
+          <span class="flow-title-icon">🌳</span>
+          Prosto z naszego sadu — od drzewa do Ciebie
+        </h3>
+        <p class="flow-subtitle">
+          U nas nie ma żadnych pośredników. Zrywamy owoce <strong>tego samego dnia rano</strong>,
+          a Ty odbierasz je <strong>po południu</strong>. Proste, uczciwe i świeże.
+          Tak jak powinno być.
+        </p>
+
+        <div class="flow-chain short">
+          <div class="flow-step good">
+            <div class="flow-step-icon">🌳</div>
+            <div class="flow-step-label">Zerwanie<br /><small>Rano</small></div>
+          </div>
+          <div class="flow-arrow good-arrow">→</div>
+          <div class="flow-step good final">
+            <div class="flow-step-icon">😍</div>
+            <div class="flow-step-label">Twój stół<br /><small class="good-text">Tego samego dnia!</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Podsumowanie perswazyjne -->
+      <div class="comparison-grid reveal">
+        <div class="compare-card compare-bad">
+          <div class="compare-header bad">
+            <span class="compare-icon">🏪</span>
+            <h3>Owoce z targu</h3>
+          </div>
+          <ul class="compare-list">
+            <li class="compare-item bad">
+              <span class="x-mark">✗</span>
+              <span>Przechodzą przez <strong>5–6 par rąk</strong></span>
+            </li>
+            <li class="compare-item bad">
+              <span class="x-mark">✗</span>
+              <span>Zerwane <strong>nawet 2 tygodnie</strong> wcześniej</span>
+            </li>
+            <li class="compare-item bad">
+              <span class="x-mark">✗</span>
+              <span>Zbierane <strong>niedojrzałe</strong>, by przetrwały transport</span>
+            </li>
+            <li class="compare-item bad">
+              <span class="x-mark">✗</span>
+              <span>Tracą <strong>smak, witaminy i aromat</strong> w chłodniach</span>
+            </li>
+            <li class="compare-item bad">
+              <span class="x-mark">✗</span>
+              <span>Nie wiesz <strong>skąd pochodzą</strong> ani kto je uprawiał</span>
+            </li>
+            <li class="compare-item bad">
+              <span class="x-mark">✗</span>
+              <span>Mogą być spryskane <strong>środkami przedłużającymi trwałość</strong></span>
+            </li>
+          </ul>
+          <div class="compare-verdict bad">
+            <span>😕</span> Do 14 dni od zerwania — to nie jest świeżość
+          </div>
+        </div>
+
+        <div class="compare-vs">
+          <div class="vs-badge">VS</div>
+        </div>
+
+        <div class="compare-card compare-good">
+          <div class="compare-header good">
+            <span class="compare-icon">🌳</span>
+            <h3>Prosto z naszego sadu</h3>
+          </div>
+          <ul class="compare-list">
+            <li class="compare-item good">
+              <span class="check-mark">✓</span>
+              <span><strong>Zero pośredników</strong> — od drzewa prosto do Ciebie</span>
+            </li>
+            <li class="compare-item good">
+              <span class="check-mark">✓</span>
+              <span>Zerwane <strong>tego samego dnia rano</strong></span>
+            </li>
+            <li class="compare-item good">
+              <span class="check-mark">✓</span>
+              <span>Zbierane w <strong>pełni dojrzałości</strong> — maksimum smaku</span>
+            </li>
+            <li class="compare-item good">
+              <span class="check-mark">✓</span>
+              <span><strong>Pełnia witamin</strong>, aromatu i naturalnej słodyczy</span>
+            </li>
+            <li class="compare-item good">
+              <span class="check-mark">✓</span>
+              <span>Wiesz <strong>dokładnie od kogo</strong> kupujesz — rodzinny sad od 1986 r.</span>
+            </li>
+          </ul>
+          <div class="compare-verdict good">
+            <span>🍒</span> Tego samego dnia! — TO jest prawdziwa świeżość
+          </div>
+        </div>
+      </div>
+
+      <div class="freshness-cta reveal">
+        <p class="freshness-quote">
+          „Kupując na targu, kupujesz owoc, który przeszedł przez giełdę, pośrednika,
+          chłodnię i sprzedawcę. Może mieć nawet dwa tygodnie i być zerwany niedojrzały.<br /><br />
+          <strong>U nas zrywamy czereśnie rano — a Ty jesz je tego samego dnia po południu.</strong>
+          Bez pośredników, bez magazynów. Smak, jaki pamiętasz z dzieciństwa
+          — prosto z drzewa do ręki. To jest różnica, którą poczujesz od pierwszego gryza."
+        </p>
+        <button class="btn btn-primary btn-large" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">
+          🍒 Zamów świeże owoce — zadzwoń: 574 340 571
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ OFERTA — TABBED ═══════ -->
+  <section class="section" id="oferta">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">🍒 Nasza oferta</div>
+        <h2 class="section-title">Wybierz swoje ulubione owoce</h2>
+        <p class="section-desc">
+          Oferujemy najlepsze odmiany czereśni i wiśni, starannie wyselekcjonowane
+          i pielęgnowane, by zapewnić najwyższą jakość.
+        </p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs-nav reveal" role="tablist">
+        <button class="tab-btn active" role="tab" data-tab="czeresnie" id="tab-czeresnie" aria-selected="true" aria-controls="panel-czeresnie">
+          <span class="tab-icon">🍒</span>
+          <span>Czereśnie</span>
+        </button>
+        <button class="tab-btn" role="tab" data-tab="wisnie" id="tab-wisnie" aria-selected="false" aria-controls="panel-wisnie">
+          <span class="tab-icon">🫐</span>
+          <span>Wiśnie</span>
+        </button>
+      </div>
+
+      <!-- Panel: Czereśnie -->
+      <div class="tab-panel active" id="panel-czeresnie" role="tabpanel" aria-labelledby="tab-czeresnie">
+        <div class="showcase">
+          <div class="showcase-image">
+            <img src="images/hero_cherries.png" alt="Świeże czereśnie z naszego sadu" />
+            <div class="badge-float">🔥 Bestseller</div>
+          </div>
+          <div class="showcase-info">
+            <span class="variety-tag">🍒 Premium Quality</span>
+            <h3>Czereśnie z naszego sadu</h3>
+            <p>
+              Nasze czereśnie to synonim doskonałości — duże, mięsiste, o intensywnym,
+              słodkim smaku. Zbieramy je ręcznie, dbając o każdy owoc. Idealne do
+              bezpośredniego jedzenia, na desery, kompoty i przetwory.
+            </p>
+            <div class="features-list">
+              <div class="feature-item">
+                <span class="check">✓</span>
+                <span>Ręcznie zbierane w pełni dojrzałości</span>
+              </div>
+              <div class="feature-item">
+                <span class="check">✓</span>
+                <span>Uprawiane z troską o najwyższą jakość</span>
+              </div>
+              <div class="feature-item">
+                <span class="check">✓</span>
+                <span>Duże, mięsiste owoce klasy premium</span>
+              </div>
+              <div class="feature-item">
+                <span class="check">✓</span>
+                <span>Dostępne na zamówienie i na miejscu</span>
+              </div>
+            </div>
+            <button class="btn btn-primary" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">
+              Zamów czereśnie 🍒
+            </button>
+          </div>
+        </div>
+
+        <div class="varieties-section">
+          <h4>Nasze odmiany czereśni</h4>
+          <div class="varieties-grid">
+            <div class="variety-card reveal">
+              <div class="variety-emoji">🍒</div>
+              <h5>Burlat</h5>
+              <p>Wczesna odmiana o dużych, ciemnoczerwonych owocach. Słodka i soczysta.</p>
+              <span class="season">📅 Czerwiec</span>
+            </div>
+            <div class="variety-card reveal">
+              <div class="variety-emoji">🍒</div>
+              <h5>Kordia</h5>
+              <p>Najchętniej kupowana odmiana. Duże, twarde owoce o wybornym smaku.</p>
+              <span class="season">📅 Lipiec</span>
+            </div>
+            <div class="variety-card reveal">
+              <div class="variety-emoji">🍒</div>
+              <h5>Vanda</h5>
+              <p>Odmiana o pięknych, dużych owocach. Słodka, soczysta i aromatyczna — doskonała na deser.</p>
+              <span class="season">📅 Czerwiec–Lipiec</span>
+            </div>
+            <div class="variety-card reveal">
+              <div class="variety-emoji">🍒</div>
+              <h5>Techlovan</h5>
+              <p>Późna odmiana o ciemnoczerwonych, chrupiących owocach. Doskonała trwałość i bogaty, wyrazisty smak.</p>
+              <span class="season">📅 Lipiec</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel: Wiśnie -->
+      <div class="tab-panel" id="panel-wisnie" role="tabpanel" aria-labelledby="tab-wisnie">
+        <div class="showcase">
+          <div class="showcase-image">
+            <img src="images/hero_sour_cherries.png" alt="Świeże wiśnie z naszego sadu" />
+            <div class="badge-float">🍰 Idealne na przetwory</div>
+          </div>
+          <div class="showcase-info">
+            <span class="variety-tag">🫐 Tradycyjny smak</span>
+            <h3>Wiśnie z naszego sadu</h3>
+            <p>
+              Nasze wiśnie to kwintesencja polskiego sadu — aromatyczne, soczyste, z
+              idealną równowagą kwaskowości i słodyczy. Doskonałe na kompoty, dżemy,
+              nalewki, ciasta i przetwory domowej roboty.
+            </p>
+            <div class="features-list">
+              <div class="feature-item">
+                <span class="check">✓</span>
+                <span>Idealny balans słodyczy i kwasowości</span>
+              </div>
+              <div class="feature-item">
+                <span class="check">✓</span>
+                <span>Doskonałe na przetwory i nalewki</span>
+              </div>
+              <div class="feature-item">
+                <span class="check">✓</span>
+                <span>Bogate w witaminę C i antyoksydanty</span>
+              </div>
+              <div class="feature-item">
+                <span class="check">✓</span>
+                <span>Tradycyjna polska odmiana</span>
+              </div>
+            </div>
+            <button class="btn btn-primary" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">
+              Zamów wiśnie 🫐
+            </button>
+          </div>
+        </div>
+
+        <div class="varieties-section">
+          <h4>Nasza odmiana wiśni</h4>
+          <div class="varieties-grid">
+            <div class="variety-card variety-card-wide reveal">
+              <div class="variety-emoji">🫐</div>
+              <h5>Łutówka</h5>
+              <p>Królowa polskich wiśni i nasza duma. Duże, ciemnoczerwone owoce o intensywnym,
+              wyrazistym smaku z idealnym balansem kwasowości i słodyczy. Doskonała na kompoty,
+              dżemy, nalewki wiśniowe, ciasta i wszelkie przetwory. Odmiana sprawdzona przez pokolenia
+              polskich sadowników — niezawodna, obficie owocująca i po prostu najlepsza.</p>
+              <span class="season">📅 Lipiec</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ O NAS ═══════ -->
+  <section class="about-section section" id="o-nas">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content reveal">
+          <div class="section-tag">🌿 O naszym sadzie</div>
+          <h2 class="section-title">Tradycja, pasja<br />i niepowtarzalny smak</h2>
+          <p>
+            Nasz sad w Wyskoci Małej <strong>(niedaleko Kościana)</strong> to rodzinna tradycja sięgająca <strong>1986 roku</strong>.
+            Od prawie 40 lat, z pokolenia na pokolenie, pielęgnujemy nasze drzewa,
+            dbając o to, by każdy owoc był doskonały. Stawiamy na zrównoważoną uprawę
+            i nowoczesne metody sadownicze z poszanowaniem natury.
+          </p>
+
+          <div class="about-values">
+            <div class="value-card">
+              <div class="value-icon">🌱</div>
+              <h5>Najwyższa jakość</h5>
+              <p>Z dbałością o każdy detal</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">👨‍🌾</div>
+              <h5>Rodzinny biznes</h5>
+              <p>Tradycja od 1986 r.</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">🤝</div>
+              <h5>Odbiór osobisty</h5>
+              <p>Prosto z naszego sadu</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">💯</div>
+              <h5>Najwyższa jakość</h5>
+              <p>Selekcja ręczna</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-image-wrapper reveal">
+          <img src="images/kwiaty_sad.jpg" alt="Kwitnące drzewa w naszym sadzie" />
+          <div class="floating-card">
+            <div class="fc-icon">🍒</div>
+            <div class="fc-text">
+              <strong>Sezon 2026</strong>
+              <span>Zamów już teraz!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CTA / KONTAKT ═══════ -->
+  <section class="cta-section section" id="kontakt">
+    <div class="container">
+      <div class="cta-content">
+        <div class="section-header">
+          <div class="section-tag" style="color: var(--cherry-200)">📞 Kontakt i zamówienia</div>
+          <h2 class="section-title">Świeże owoce prosto z sadu<br />z dostawą pod same drzwi</h2>
+          <p class="section-desc">
+            Zamów czereśnie lub wiśnie bezpośrednio od rolnika z Wyskoci Małej (ok. Kościana).
+            Zrywamy wyłącznie na Twoje zamówienie. Oferujemy dowóz prosto do Twoich
+            drzwi bez wychodzenia z domu, lub wygodny odbiór osobisty.
+          </p>
+        </div>
+
+        <div class="cta-contact-details">
+          <div class="cta-detail-card">
+            <span class="cta-detail-icon">📞</span>
+            <div>
+              <span class="cta-detail-label">Zadzwoń i zamów</span>
+              <a href="tel:+48574340571" class="cta-detail-value">574 340 571</a>
+            </div>
+          </div>
+          <div class="cta-detail-card">
+            <span class="cta-detail-icon">✉️</span>
+            <div>
+              <span class="cta-detail-label">Zamów przez e-mail</span>
+              <a href="mailto:kontakt@example.pl" class="cta-detail-value">kontakt@example.pl</a>
+            </div>
+          </div>
+          <div class="cta-detail-card">
+            <span class="cta-detail-icon">📍</span>
+            <div>
+              <span class="cta-detail-label">Odbiór osobisty</span>
+              <span class="cta-detail-value">Wyskoć Mała 4A, 64-000<br /><small style="opacity: 0.8; font-weight: normal">(niedaleko Kościana)</small></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-delivery-info">
+          <div class="delivery-badge">🚚 Oferujemy dostawę!</div>
+          <p>Nie możesz przyjechać? Żaden problem — dowozimy świeże owoce
+          prosto pod Twoje drzwi. Zadzwoń lub napisz maila, żeby ustalić szczegóły dostawy.</p>
+        </div>
+
+        <div class="cta-buttons">
+          <a href="tel:+48574340571" class="btn btn-white">
+            📞 Zadzwoń: 574 340 571
+          </a>
+          <a href="mailto:kontakt@example.pl" class="btn btn-ghost">
+            ✉️ Napisz e-mail
+          </a>
+          <a href="https://maps.google.com/?q=Wyskoć+Mała+4A+64-000" target="_blank" class="btn btn-ghost">
+            📍 Pokaż na mapie
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-icon">🍒</span>
+            <span class="logo-text">Sad<span>Owocowy</span></span>
+          </a>
+          <p>
+            Rodzinny sad z wieloletnią tradycją. Dostarczamy najświeższe czereśnie
+            i wiśnie prosto do Twojego stołu.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Nawigacja</h4>
+          <a href="#home">Strona główna</a>
+          <a href="#oferta">Oferta</a>
+          <a href="#o-nas">O nas</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Owoce</h4>
+          <a href="#" onclick="switchTab('czeresnie'); return false;">Czereśnie</a>
+          <a href="#" onclick="switchTab('wisnie'); return false;">Wiśnie</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <div class="footer-contact-item">
+            <span>📞</span>
+            <a href="tel:+48574340571">574 340 571</a>
+          </div>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <span>Wyskoć Mała 4A, 64-000 (k. Kościana)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 SadOwocowy — Wszystkie prawa zastrzeżone. Stworzono z ❤️ do natury.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════ SCRIPTS ═══════ -->
+  <script src="index.js"></script>
+</body>
+</html>
