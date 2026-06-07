@@ -112,7 +112,7 @@
       </div>
 
       <div class="order-form-wrapper reveal">
-        <div class="order-delivery-badge">🚚 Od 5 kg darmowy dowóz prosto pod Twoje drzwi!</div>
+        <div class="order-delivery-badge">🚚 Od 5 kg dowozimy prosto pod Twoje drzwi - nie musisz wychodzić z domu!</div>
 
         <form action="https://formsubmit.co/czeresniekoscian@gmail.com" method="POST" class="order-form" id="orderForm">
           <!-- Formsubmit config -->
@@ -123,22 +123,23 @@
           <input type="text" name="_honey" style="display:none" />
 
           <div class="form-grid">
-            <!-- Gatunek -->
+            <!-- Gatunek - tylko czereśnie aktywne -->
             <div class="form-group form-group-full">
               <label class="form-label">Jaki owoc chcesz zamówić?</label>
               <div class="fruit-selector">
                 <label class="fruit-option">
-                  <input type="checkbox" name="Owoc" value="Czereśnie" />
+                  <input type="checkbox" name="Owoc" value="Czereśnie" checked />
                   <span class="fruit-card">
                     <span class="fruit-emoji">🍒</span>
                     <span class="fruit-name">Czereśnie</span>
                   </span>
                 </label>
-                <label class="fruit-option">
-                  <input type="checkbox" name="Owoc" value="Wiśnie" />
+                <label class="fruit-option fruit-disabled" title="Wiśnie będą dostępne wkrótce">
+                  <input type="checkbox" name="Owoc" value="Wiśnie" disabled />
                   <span class="fruit-card">
                     <span class="fruit-emoji">🍒</span>
                     <span class="fruit-name">Wiśnie</span>
+                    <span class="fruit-soon">Wkrótce dostępne</span>
                   </span>
                 </label>
               </div>
@@ -148,40 +149,63 @@
             <div class="form-group form-group-full">
               <label class="form-label">Odmiana (opcjonalnie)</label>
               <div class="variety-selector">
-                <label class="variety-chip"><input type="checkbox" name="Odmiana" value="Burlat" /><span>Burlat</span></label>
-                <label class="variety-chip"><input type="checkbox" name="Odmiana" value="Vanda" /><span>Vanda</span></label>
-                <label class="variety-chip"><input type="checkbox" name="Odmiana" value="Kordia" /><span>Kordia</span></label>
-                <label class="variety-chip"><input type="checkbox" name="Odmiana" value="Techlovan" /><span>Techlovan</span></label>
-                <label class="variety-chip"><input type="checkbox" name="Odmiana" value="Łutówka (wiśnia)" /><span>Łutówka (wiśnia)</span></label>
+                <label class="variety-chip">
+                  <input type="checkbox" name="Odmiana" value="Burlat" />
+                  <span>Burlat ✅</span>
+                </label>
+                <label class="variety-chip variety-disabled" title="Dostępna wkrótce">
+                  <input type="checkbox" name="Odmiana" value="Vanda" disabled />
+                  <span>Vanda 🔜</span>
+                </label>
+                <label class="variety-chip variety-disabled" title="Dostępna wkrótce">
+                  <input type="checkbox" name="Odmiana" value="Kordia" disabled />
+                  <span>Kordia 🔜</span>
+                </label>
+                <label class="variety-chip variety-disabled" title="Dostępna wkrótce">
+                  <input type="checkbox" name="Odmiana" value="Techlovan" disabled />
+                  <span>Techlovan 🔜</span>
+                </label>
               </div>
             </div>
 
-            <!-- Ilość -->
-            <div class="form-group">
-              <label class="form-label" for="ilosc">Ilość (kg)</label>
-              <input type="number" id="ilosc" name="Ilość (kg)" min="1" step="1" placeholder="np. 5" required class="form-input" />
-              <small class="form-hint">Od 5 kg - darmowy dowóz!</small>
+            <!-- Ilość - suwak -->
+            <div class="form-group form-group-full">
+              <label class="form-label">Ilość (kg)</label>
+              <div class="slider-wrapper">
+                <input type="range" id="iloscSlider" min="1" max="50" value="5" step="1" class="kg-slider" />
+                <div class="slider-value" id="sliderValue">
+                  <span class="slider-kg">5</span> kg
+                </div>
+              </div>
+              <input type="hidden" id="iloscHidden" name="Ilość (kg)" value="5" />
+              <div class="slider-info">
+                <span>Min. 1 kg</span>
+                <span class="slider-delivery-hint" id="deliveryHint">🚚 Darmowy dowóz dostępny!</span>
+              </div>
             </div>
 
             <!-- Sposób odbioru -->
-            <div class="form-group">
+            <div class="form-group form-group-full">
               <label class="form-label">Sposób odbioru</label>
-              <div class="delivery-options">
-                <label class="delivery-option">
-                  <input type="radio" name="Odbiór" value="Dowóz pod drzwi" checked />
+              <div class="delivery-options" id="deliveryOptions">
+                <label class="delivery-option" id="deliveryOptionDowoz">
+                  <input type="radio" name="Odbiór" value="Dowóz pod drzwi (od 5 kg)" id="radioDowoz" checked />
                   <span class="delivery-card">
                     <span>🚚</span>
                     <span>Dowóz pod drzwi</span>
                   </span>
                 </label>
                 <label class="delivery-option">
-                  <input type="radio" name="Odbiór" value="Odbiór osobisty" />
+                  <input type="radio" name="Odbiór" value="Odbiór osobisty" id="radioOdbior" />
                   <span class="delivery-card">
                     <span>📍</span>
                     <span>Odbiór osobisty</span>
                   </span>
                 </label>
               </div>
+              <small class="delivery-min-note" id="deliveryMinNote" style="display:none">
+                ⚠️ Dowóz dostępny od 5 kg. Przy mniejszych ilościach zapraszamy po odbiór osobisty.
+              </small>
             </div>
 
             <!-- Dane kontaktowe -->
@@ -195,8 +219,8 @@
               <input type="tel" id="telefon" name="Telefon" placeholder="574 340 571" required class="form-input" />
             </div>
 
-            <div class="form-group form-group-full">
-              <label class="form-label" for="adres">Adres dostawy (jeśli dowóz)</label>
+            <div class="form-group form-group-full" id="adresGroup">
+              <label class="form-label" for="adres">Adres dostawy</label>
               <input type="text" id="adres" name="Adres dostawy" placeholder="Ulica, numer, miejscowość" class="form-input" />
             </div>
 
@@ -230,16 +254,18 @@
         </p>
       </div>
 
-      <!-- Tabs -->
+      <!-- Tabs - wiśnie ukryte na razie -->
       <div class="tabs-nav reveal" role="tablist">
         <button class="tab-btn active" role="tab" data-tab="czeresnie" id="tab-czeresnie" aria-selected="true" aria-controls="panel-czeresnie">
           <span class="tab-icon">🍒</span>
           <span>Czereśnie</span>
         </button>
+        <!-- Wiśnie ukryte - odkomentuj gdy będą dostępne
         <button class="tab-btn" role="tab" data-tab="wisnie" id="tab-wisnie" aria-selected="false" aria-controls="panel-wisnie">
           <span class="tab-icon">🍒</span>
           <span>Wiśnie</span>
         </button>
+        -->
       </div>
 
       <!-- Panel: Czereśnie -->
@@ -290,19 +316,22 @@
               <p>Wczesna odmiana o dużych, ciemnoczerwonych owocach. Słodka i soczysta.</p>
               <span class="season">📅 Czerwiec</span>
             </div>
-            <div class="variety-card reveal">
+            <div class="variety-card variety-card-soon reveal">
+              <div class="variety-soon-badge">Wkrótce</div>
               <div class="variety-emoji">🍒</div>
               <h5>Kordia</h5>
               <p>Najchętniej kupowana odmiana. Duże, twarde owoce o wybornym smaku.</p>
               <span class="season">📅 Lipiec</span>
             </div>
-            <div class="variety-card reveal">
+            <div class="variety-card variety-card-soon reveal">
+              <div class="variety-soon-badge">Wkrótce</div>
               <div class="variety-emoji">🍒</div>
               <h5>Vanda</h5>
               <p>Odmiana o pięknych, dużych owocach. Słodka, soczysta i aromatyczna - doskonała na deser.</p>
               <span class="season">📅 Czerwiec-Lipiec</span>
             </div>
-            <div class="variety-card reveal">
+            <div class="variety-card variety-card-soon reveal">
+              <div class="variety-soon-badge">Wkrótce</div>
               <div class="variety-emoji">🍒</div>
               <h5>Techlovan</h5>
               <p>Późna odmiana o ciemnoczerwonych, chrupiących owocach. Doskonała trwałość i bogaty, wyrazisty smak.</p>

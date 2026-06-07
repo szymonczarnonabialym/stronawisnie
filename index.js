@@ -185,4 +185,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  // ─── Order Form: KG Slider + Delivery Logic ───
+  const slider = document.getElementById('iloscSlider');
+  const sliderKg = document.querySelector('.slider-kg');
+  const hiddenInput = document.getElementById('iloscHidden');
+  const deliveryHint = document.getElementById('deliveryHint');
+  const deliveryOptionDowoz = document.getElementById('deliveryOptionDowoz');
+  const radioDowoz = document.getElementById('radioDowoz');
+  const radioOdbior = document.getElementById('radioOdbior');
+  const deliveryMinNote = document.getElementById('deliveryMinNote');
+  const adresGroup = document.getElementById('adresGroup');
+
+  function updateSlider() {
+    if (!slider) return;
+    const val = parseInt(slider.value);
+    sliderKg.textContent = val;
+    hiddenInput.value = val;
+
+    // Update slider track fill
+    const pct = ((val - 1) / 49) * 100;
+    slider.style.background = `linear-gradient(to right, var(--cherry-500) ${pct}%, #e8e0d8 ${pct}%)`;
+
+    if (val >= 5) {
+      // Delivery available
+      deliveryHint.textContent = '🚚 Darmowy dowóz dostępny!';
+      deliveryHint.classList.remove('inactive');
+      deliveryOptionDowoz.classList.remove('delivery-option-disabled');
+      deliveryMinNote.style.display = 'none';
+      // Keep current selection
+    } else {
+      // Delivery NOT available
+      deliveryHint.textContent = 'Dowóz od 5 kg';
+      deliveryHint.classList.add('inactive');
+      deliveryOptionDowoz.classList.add('delivery-option-disabled');
+      radioDowoz.checked = false;
+      radioOdbior.checked = true;
+      deliveryMinNote.style.display = 'block';
+    }
+
+    // Show/hide address field based on delivery selection
+    updateAdresVisibility();
+  }
+
+  function updateAdresVisibility() {
+    if (!adresGroup) return;
+    if (radioDowoz && radioDowoz.checked) {
+      adresGroup.style.display = '';
+    } else {
+      adresGroup.style.display = 'none';
+    }
+  }
+
+  if (slider) {
+    slider.addEventListener('input', updateSlider);
+    // Also listen for delivery radio changes
+    if (radioDowoz) radioDowoz.addEventListener('change', updateAdresVisibility);
+    if (radioOdbior) radioOdbior.addEventListener('change', updateAdresVisibility);
+    // Init
+    updateSlider();
+  }
+
 });
