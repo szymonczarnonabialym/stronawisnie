@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Czereśnie Kościan - Świeże Czereśnie i Wiśnie Prosto z Sadu</title>
-  <meta name="description" content="Najwyższej jakości czereśnie i wiśnie prosto z naszego sadu. Świeże, soczyste owoce zbierane ręcznie - naturalny smak, który zachwyca." />
+  <meta name="description" content="Najwyższej jakości czereśnie i wiśnie prosto z naszego sadu. Świeże, soczyste owoce zbierane ręcznie - smak, który zachwyca." />
   <link rel="stylesheet" href="index.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>🍒</text></svg>" />
 </head>
@@ -23,8 +23,8 @@
         <a href="#oferta" class="nav-link" data-section="oferta">Oferta</a>
         <a href="#o-nas" class="nav-link" data-section="o-nas">O nas</a>
         <a href="#kontakt" class="nav-link" data-section="kontakt">Kontakt</a>
-        <button class="nav-cta" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">
-          📞 Zamów teraz
+        <button class="nav-cta" onclick="document.getElementById('zamowienie').scrollIntoView({behavior:'smooth'})">
+          🛒 Zamów teraz
         </button>
       </nav>
 
@@ -55,12 +55,12 @@
         tylko owoce prosto z drzewa do Twoich rąk.
       </p>
       <div class="hero-actions">
-        <button class="btn btn-primary" onclick="document.getElementById('oferta').scrollIntoView({behavior:'smooth'})">
-          🍒 Zobacz ofertę
+        <button class="btn btn-primary btn-hero-order" onclick="document.getElementById('zamowienie').scrollIntoView({behavior:'smooth'})">
+          🛒 ZAMÓW TERAZ
         </button>
-        <button class="btn btn-outline" onclick="document.getElementById('o-nas').scrollIntoView({behavior:'smooth'})">
-          Poznaj nasz sad →
-        </button>
+      </div>
+      <div class="hero-delivery-note">
+        🚚 Od 5 kg dowozimy prosto pod Twoje drzwi!
       </div>
     </div>
 
@@ -99,192 +99,121 @@
     </div>
   </section>
 
-  <!-- ═══════ DLACZEGO OD ROLNIKA ═══════ -->
-  <section class="freshness-section section" id="dlaczego">
+  <!-- ═══════ FORMULARZ ZAMÓWIENIA ═══════ -->
+  <section class="order-section section" id="zamowienie">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-tag">⏱️ Dlaczego kupować bezpośrednio od rolnika?</div>
-        <h2 class="section-title">Zastanów się, co tak naprawdę<br />kupujesz na targu</h2>
+        <div class="section-tag">🛒 Złóż zamówienie</div>
+        <h2 class="section-title">Zamów świeże owoce<br />prosto z sadu</h2>
         <p class="section-desc">
-          Zanim czereśnia trafi na targowy stragan, przechodzi przez tyle rąk,
-          że traci świeżość, smak i połowę witamin. My to zmieniamy.
+          Wypełnij krótki formularz, a my odezwiemy się do Ciebie z potwierdzeniem.
+          Zrywamy owoce wyłącznie na Twoje zamówienie!
         </p>
       </div>
 
-      <!-- ── SCHEMAT BLOKOWY: Droga owoców z targu ── -->
-      <div class="flow-section reveal">
-        <h3 class="flow-title">
-          <span class="flow-title-icon">🏪</span>
-          Droga czereśni z targu - ile rąk dotyka Twój owoc?
-        </h3>
-        <p class="flow-subtitle">
-          Każdy etap to utrata świeżości, kolejne uszkodzenia mechaniczne i czas w nieoptymalnych warunkach.
-          Owoc, który kupujesz na targu, może mieć nawet <strong>2 tygodnie od zerwania</strong>.
-        </p>
+      <div class="order-form-wrapper reveal">
+        <div class="order-delivery-badge">🚚 Od 5 kg darmowy dowóz prosto pod Twoje drzwi!</div>
 
-        <div class="flow-chain">
-          <div class="flow-step bad">
-            <div class="flow-step-icon">🌳</div>
-            <div class="flow-step-label">Zerwanie<br /><small>Dzień 1</small></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step bad">
-            <div class="flow-step-icon">📦</div>
-            <div class="flow-step-label">Skup / Giełda<br /><small>Dzień 2-3</small></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step bad">
-            <div class="flow-step-icon">🤝</div>
-            <div class="flow-step-label">Pośrednik<br /><small>Dzień 4-5</small></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step bad">
-            <div class="flow-step-icon">❄️</div>
-            <div class="flow-step-label">Chłodnia<br /><small>Dzień 5-10</small></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step bad">
-            <div class="flow-step-icon">🚛</div>
-            <div class="flow-step-label">Transport<br /><small>Dzień 10-12</small></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step bad">
-            <div class="flow-step-icon">🏪</div>
-            <div class="flow-step-label">Sprzedawca<br /><small>Dzień 12-14</small></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step bad final">
-            <div class="flow-step-icon">😕</div>
-            <div class="flow-step-label">Twój stół<br /><small class="bad-text">Do 14 dni!</small></div>
-          </div>
-        </div>
+        <form action="https://formsubmit.co/czeresniekoscian@gmail.com" method="POST" class="order-form" id="orderForm">
+          <!-- Formsubmit config -->
+          <input type="hidden" name="_subject" value="🍒 Nowe zamówienie ze strony czeresniekoscian.pl" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://czeresniekoscian.pl/#podziekowanie" />
+          <input type="text" name="_honey" style="display:none" />
 
-        <div class="flow-warning">
-          ⚠️ Każdy pośrednik to kolejne przesypywanie, transport i czas w plastikowym opakowaniu.
-          Owoce tracą jędrność, aromat i witaminy. Często są zbierane <strong>niedojrzałe</strong>,
-          żeby w ogóle przetrwały tę drogę. To dlatego targowe czereśnie często smakują jak woda
-          - bo zostały zerwane zielone i dojrzewały w chłodni, a nie na słońcu.
-        </div>
-      </div>
+          <div class="form-grid">
+            <!-- Gatunek -->
+            <div class="form-group form-group-full">
+              <label class="form-label">Jaki owoc chcesz zamówić?</label>
+              <div class="fruit-selector">
+                <label class="fruit-option">
+                  <input type="checkbox" name="Owoc" value="Czereśnie" />
+                  <span class="fruit-card">
+                    <span class="fruit-emoji">🍒</span>
+                    <span class="fruit-name">Czereśnie</span>
+                  </span>
+                </label>
+                <label class="fruit-option">
+                  <input type="checkbox" name="Owoc" value="Wiśnie" />
+                  <span class="fruit-card">
+                    <span class="fruit-emoji">🍒</span>
+                    <span class="fruit-name">Wiśnie</span>
+                  </span>
+                </label>
+              </div>
+            </div>
 
-      <!-- VS Divider -->
-      <div class="vs-divider reveal">
-        <div class="vs-line"></div>
-        <div class="vs-badge-large">VS</div>
-        <div class="vs-line"></div>
-      </div>
+            <!-- Odmiana czereśni -->
+            <div class="form-group form-group-full">
+              <label class="form-label">Odmiana (opcjonalnie)</label>
+              <div class="variety-selector">
+                <label class="variety-chip"><input type="checkbox" name="Odmiana" value="Burlat" /><span>Burlat</span></label>
+                <label class="variety-chip"><input type="checkbox" name="Odmiana" value="Vanda" /><span>Vanda</span></label>
+                <label class="variety-chip"><input type="checkbox" name="Odmiana" value="Kordia" /><span>Kordia</span></label>
+                <label class="variety-chip"><input type="checkbox" name="Odmiana" value="Techlovan" /><span>Techlovan</span></label>
+                <label class="variety-chip"><input type="checkbox" name="Odmiana" value="Łutówka (wiśnia)" /><span>Łutówka (wiśnia)</span></label>
+              </div>
+            </div>
 
-      <!-- ── SCHEMAT BLOKOWY: Prosto z sadu ── -->
-      <div class="flow-section flow-good reveal">
-        <h3 class="flow-title good">
-          <span class="flow-title-icon">🌳</span>
-          Prosto z naszego sadu - od drzewa do Ciebie
-        </h3>
-        <p class="flow-subtitle">
-          U nas nie ma żadnych pośredników. Zrywamy owoce <strong>tego samego dnia rano</strong>,
-          a Ty odbierasz je <strong>po południu</strong>. Proste, uczciwe i świeże.
-          Tak jak powinno być.
-        </p>
+            <!-- Ilość -->
+            <div class="form-group">
+              <label class="form-label" for="ilosc">Ilość (kg)</label>
+              <input type="number" id="ilosc" name="Ilość (kg)" min="1" step="1" placeholder="np. 5" required class="form-input" />
+              <small class="form-hint">Od 5 kg - darmowy dowóz!</small>
+            </div>
 
-        <div class="flow-chain short">
-          <div class="flow-step good">
-            <div class="flow-step-icon">🌳</div>
-            <div class="flow-step-label">Zerwanie<br /><small>Rano</small></div>
+            <!-- Sposób odbioru -->
+            <div class="form-group">
+              <label class="form-label">Sposób odbioru</label>
+              <div class="delivery-options">
+                <label class="delivery-option">
+                  <input type="radio" name="Odbiór" value="Dowóz pod drzwi" checked />
+                  <span class="delivery-card">
+                    <span>🚚</span>
+                    <span>Dowóz pod drzwi</span>
+                  </span>
+                </label>
+                <label class="delivery-option">
+                  <input type="radio" name="Odbiór" value="Odbiór osobisty" />
+                  <span class="delivery-card">
+                    <span>📍</span>
+                    <span>Odbiór osobisty</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Dane kontaktowe -->
+            <div class="form-group">
+              <label class="form-label" for="imie">Imię i nazwisko</label>
+              <input type="text" id="imie" name="Imię i nazwisko" placeholder="Jan Kowalski" required class="form-input" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="telefon">Numer telefonu</label>
+              <input type="tel" id="telefon" name="Telefon" placeholder="574 340 571" required class="form-input" />
+            </div>
+
+            <div class="form-group form-group-full">
+              <label class="form-label" for="adres">Adres dostawy (jeśli dowóz)</label>
+              <input type="text" id="adres" name="Adres dostawy" placeholder="Ulica, numer, miejscowość" class="form-input" />
+            </div>
+
+            <div class="form-group form-group-full">
+              <label class="form-label" for="uwagi">Dodatkowe uwagi</label>
+              <textarea id="uwagi" name="Uwagi" rows="3" placeholder="Np. preferowana pora dostawy, specjalne życzenia..." class="form-input"></textarea>
+            </div>
           </div>
-          <div class="flow-arrow good-arrow">→</div>
-          <div class="flow-step good final">
-            <div class="flow-step-icon">😍</div>
-            <div class="flow-step-label">Twój stół<br /><small class="good-text">Tego samego dnia!</small></div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Podsumowanie perswazyjne -->
-      <div class="comparison-grid reveal">
-        <div class="compare-card compare-bad">
-          <div class="compare-header bad">
-            <span class="compare-icon">🏪</span>
-            <h3>Owoce z targu</h3>
-          </div>
-          <ul class="compare-list">
-            <li class="compare-item bad">
-              <span class="x-mark">✗</span>
-              <span>Przechodzą przez <strong>5-6 par rąk</strong></span>
-            </li>
-            <li class="compare-item bad">
-              <span class="x-mark">✗</span>
-              <span>Zerwane <strong>nawet 2 tygodnie</strong> wcześniej</span>
-            </li>
-            <li class="compare-item bad">
-              <span class="x-mark">✗</span>
-              <span>Zbierane <strong>niedojrzałe</strong>, by przetrwały transport</span>
-            </li>
-            <li class="compare-item bad">
-              <span class="x-mark">✗</span>
-              <span>Tracą <strong>smak, witaminy i aromat</strong> w chłodniach</span>
-            </li>
-            <li class="compare-item bad">
-              <span class="x-mark">✗</span>
-              <span>Nie wiesz <strong>skąd pochodzą</strong> ani kto je uprawiał</span>
-            </li>
-            <li class="compare-item bad">
-              <span class="x-mark">✗</span>
-              <span>Mogą być spryskane <strong>środkami przedłużającymi trwałość</strong></span>
-            </li>
-          </ul>
-          <div class="compare-verdict bad">
-            <span>😕</span> Do 14 dni od zerwania - to nie jest świeżość
-          </div>
-        </div>
+          <button type="submit" class="btn btn-primary btn-submit">
+            🍒 Wyślij zamówienie
+          </button>
 
-        <div class="compare-vs">
-          <div class="vs-badge">VS</div>
-        </div>
-
-        <div class="compare-card compare-good">
-          <div class="compare-header good">
-            <span class="compare-icon">🌳</span>
-            <h3>Prosto z naszego sadu</h3>
-          </div>
-          <ul class="compare-list">
-            <li class="compare-item good">
-              <span class="check-mark">✓</span>
-              <span><strong>Zero pośredników</strong> - od drzewa prosto do Ciebie</span>
-            </li>
-            <li class="compare-item good">
-              <span class="check-mark">✓</span>
-              <span>Zerwane <strong>tego samego dnia rano</strong></span>
-            </li>
-            <li class="compare-item good">
-              <span class="check-mark">✓</span>
-              <span>Zbierane w <strong>pełni dojrzałości</strong> - maksimum smaku</span>
-            </li>
-            <li class="compare-item good">
-              <span class="check-mark">✓</span>
-              <span><strong>Pełnia witamin</strong>, aromatu i naturalnej słodyczy</span>
-            </li>
-            <li class="compare-item good">
-              <span class="check-mark">✓</span>
-              <span>Wiesz <strong>dokładnie od kogo</strong> kupujesz - rodzinny sad od 1986 r.</span>
-            </li>
-          </ul>
-          <div class="compare-verdict good">
-            <span>🍒</span> Tego samego dnia! - TO jest prawdziwa świeżość
-          </div>
-        </div>
-      </div>
-
-      <div class="freshness-cta reveal">
-        <p class="freshness-quote">
-          „Kupując na targu, kupujesz owoc, który przeszedł przez giełdę, pośrednika,
-          chłodnię i sprzedawcę. Może mieć nawet dwa tygodnie i być zerwany niedojrzały.<br /><br />
-          <strong>U nas zrywamy czereśnie rano - a Ty jesz je tego samego dnia po południu.</strong>
-          Bez pośredników, bez magazynów. Smak, jaki pamiętasz z dzieciństwa
-          - prosto z drzewa do ręki. To jest różnica, którą poczujesz od pierwszego gryza."
-        </p>
-        <button class="btn btn-primary btn-large" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">
-          🍒 Zamów świeże owoce - zadzwoń: 574 340 571
-        </button>
+          <p class="form-disclaimer">
+            Odezwiemy się telefonicznie w celu potwierdzenia zamówienia i ustalenia szczegółów.
+          </p>
+        </form>
       </div>
     </div>
   </section>
@@ -346,7 +275,7 @@
                 <span>Dostępne na zamówienie i na miejscu</span>
               </div>
             </div>
-            <button class="btn btn-primary" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">
+            <button class="btn btn-primary" onclick="document.getElementById('zamowienie').scrollIntoView({behavior:'smooth'})">
               Zamów czereśnie 🍒
             </button>
           </div>
@@ -416,7 +345,7 @@
                 <span>Tradycyjna polska odmiana</span>
               </div>
             </div>
-            <button class="btn btn-primary" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">
+            <button class="btn btn-primary" onclick="document.getElementById('zamowienie').scrollIntoView({behavior:'smooth'})">
               Zamów wiśnie 🍒
             </button>
           </div>
@@ -428,9 +357,8 @@
             <div class="variety-card variety-card-wide reveal">
               <div class="variety-emoji">🍒</div>
               <h5>Łutówka</h5>
-              <p>Królowa polskich wiśni i nasza duma. Duże, ciemnoczerwone owoce o intensywnym,
-              wyrazistym smaku z idealnym balansem kwasowości i słodyczy. Doskonała na kompoty,
-              dżemy, nalewki wiśniowe, ciasta i wszelkie przetwory. Odmiana sprawdzona przez pokolenia
+              <p>Królowa polskich wiśni. Duże, ciemnoczerwone owoce o charakterystycznym,
+              intensywnym smaku. Łutówka to synonim najlepszych wiśni w Polsce - wybór
               polskich sadowników - niezawodna, obficie owocująca i po prostu najlepsza.</p>
               <span class="season">📅 Lipiec</span>
             </div>
@@ -466,14 +394,14 @@
               <p>Tradycja od 1986 r.</p>
             </div>
             <div class="value-card">
-              <div class="value-icon">🤝</div>
-              <h5>Odbiór osobisty</h5>
-              <p>Prosto z naszego sadu</p>
+              <div class="value-icon">🚚</div>
+              <h5>Dowóz do klienta</h5>
+              <p>Od 5 kg pod drzwi</p>
             </div>
             <div class="value-card">
               <div class="value-icon">💯</div>
-              <h5>Najwyższa jakość</h5>
-              <p>Selekcja ręczna</p>
+              <h5>Ręczna selekcja</h5>
+              <p>Każdy owoc sprawdzony</p>
             </div>
           </div>
         </div>
@@ -492,56 +420,42 @@
     </div>
   </section>
 
-  <!-- ═══════ CTA / KONTAKT ═══════ -->
+  <!-- ═══════ KONTAKT ═══════ -->
   <section class="cta-section section" id="kontakt">
     <div class="container">
       <div class="cta-content">
         <div class="section-header">
-          <div class="section-tag" style="color: var(--cherry-200)">📞 Kontakt i zamówienia</div>
-          <h2 class="section-title">Świeże owoce prosto z sadu<br />z dostawą pod same drzwi</h2>
-          <p class="section-desc">
-            Zamów czereśnie lub wiśnie bezpośrednio od rolnika z Wyskoci Małej (ok. Kościana).
-            Zrywamy wyłącznie na Twoje zamówienie. Oferujemy dowóz prosto do Twoich
-            drzwi bez wychodzenia z domu, lub wygodny odbiór osobisty.
-          </p>
+          <div class="section-tag" style="color: var(--cherry-200)">📞 Kontakt</div>
+          <h2 class="section-title">Masz pytania?<br />Zadzwoń lub napisz</h2>
         </div>
 
         <div class="cta-contact-details">
           <div class="cta-detail-card">
             <span class="cta-detail-icon">📞</span>
             <div>
-              <span class="cta-detail-label">Zadzwoń i zamów</span>
+              <span class="cta-detail-label">Zadzwoń</span>
               <a href="tel:+48574340571" class="cta-detail-value">574 340 571</a>
             </div>
           </div>
           <div class="cta-detail-card">
             <span class="cta-detail-icon">✉️</span>
             <div>
-              <span class="cta-detail-label">Zamów przez e-mail</span>
+              <span class="cta-detail-label">E-mail</span>
               <a href="mailto:czeresniekoscian@gmail.com" class="cta-detail-value">czeresniekoscian@gmail.com</a>
             </div>
           </div>
           <div class="cta-detail-card">
             <span class="cta-detail-icon">📍</span>
             <div>
-              <span class="cta-detail-label">Odbiór osobisty</span>
+              <span class="cta-detail-label">Adres</span>
               <span class="cta-detail-value">Wyskoć Mała 4A, 64-000<br /><small style="opacity: 0.8; font-weight: normal">(niedaleko Kościana)</small></span>
             </div>
           </div>
         </div>
 
-        <div class="cta-delivery-info">
-          <div class="delivery-badge">🚚 Oferujemy dostawę!</div>
-          <p>Nie możesz przyjechać? Żaden problem - dowozimy świeże owoce
-          prosto pod Twoje drzwi. Zadzwoń lub napisz maila, żeby ustalić szczegóły dostawy.</p>
-        </div>
-
         <div class="cta-buttons">
           <a href="tel:+48574340571" class="btn btn-white">
             📞 Zadzwoń: 574 340 571
-          </a>
-          <a href="mailto:czeresniekoscian@gmail.com" class="btn btn-ghost">
-            ✉️ Napisz e-mail
           </a>
           <a href="https://maps.google.com/?q=Wyskoć+Mała+4A+64-000" target="_blank" class="btn btn-ghost">
             📍 Pokaż na mapie
@@ -550,6 +464,18 @@
       </div>
     </div>
   </section>
+
+  <!-- ═══════ PODZIĘKOWANIE (po wysłaniu formularza) ═══════ -->
+  <div class="thank-you-overlay" id="podziekowanie">
+    <div class="thank-you-box">
+      <div class="thank-you-icon">✅</div>
+      <h2>Dziękujemy za zamówienie!</h2>
+      <p>Otrzymaliśmy Twoje zgłoszenie. Odezwiemy się telefonicznie, aby potwierdzić szczegóły.</p>
+      <a href="#home" class="btn btn-primary" onclick="document.getElementById('podziekowanie').style.display='none'">
+        Wróć do strony głównej
+      </a>
+    </div>
+  </div>
 
   <!-- ═══════ FOOTER ═══════ -->
   <footer class="footer">
@@ -569,6 +495,7 @@
         <div class="footer-col">
           <h4>Nawigacja</h4>
           <a href="#home">Strona główna</a>
+          <a href="#zamowienie">Zamów owoce</a>
           <a href="#oferta">Oferta</a>
           <a href="#o-nas">O nas</a>
           <a href="#kontakt">Kontakt</a>
