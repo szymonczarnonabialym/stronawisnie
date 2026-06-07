@@ -1819,6 +1819,28 @@ textarea.form-input {
   z-index: 2;
 }
 
+/* Variety card available with price */
+.variety-card-available {
+  position: relative;
+  border: 2px solid var(--leaf-400) !important;
+  box-shadow: 0 4px 20px rgba(109, 191, 92, .15);
+}
+
+.variety-price-badge {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  background: linear-gradient(135deg, var(--leaf-500), var(--leaf-400));
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 800;
+  padding: .35rem .9rem;
+  border-radius: 50px;
+  letter-spacing: .02em;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(74, 158, 60, .3);
+}
+
 /* KG Slider */
 .slider-wrapper {
   display: flex;
