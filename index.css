@@ -1717,6 +1717,61 @@ textarea.form-input {
   margin: 0;
 }
 
+/* Or Call Section */
+.form-or-call {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.form-or-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-or-line {
+  flex: 1;
+  height: 1px;
+  background: #e0d8d0;
+}
+
+.form-or-text {
+  font-size: .85rem;
+  font-weight: 600;
+  color: #a89e94;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.btn-call {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: 1rem 2.5rem;
+  background: var(--dark-800);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all .3s var(--ease-smooth);
+  border: 2px solid var(--dark-700);
+}
+
+.btn-call:hover {
+  background: var(--dark-700);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,0,0,.15);
+}
+
+.form-call-hint {
+  margin-top: .6rem;
+  font-size: .8rem;
+  color: #a89e94;
+}
+
 /* Thank You Overlay */
 .thank-you-overlay {
   display: none;
