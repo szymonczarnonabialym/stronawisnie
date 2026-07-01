@@ -120,7 +120,10 @@
                 "category": "Czereśnie",
                 "offers": {
                   "@type": "Offer",
-                  "availability": "https://schema.org/OutOfStock"
+                  "price": "15",
+                  "priceCurrency": "PLN",
+                  "unitCode": "KGM",
+                  "availability": "https://schema.org/InStock"
                 }
               }
             },
@@ -133,7 +136,10 @@
                 "category": "Czereśnie",
                 "offers": {
                   "@type": "Offer",
-                  "availability": "https://schema.org/PreOrder"
+                  "price": "15",
+                  "priceCurrency": "PLN",
+                  "unitCode": "KGM",
+                  "availability": "https://schema.org/InStock"
                 }
               }
             },
@@ -317,13 +323,13 @@
                   <input type="checkbox" name="Odmiana" value="Vega" />
                   <span>Vega - 15 zł/kg ✅</span>
                 </label>
-                <label class="variety-chip variety-disabled" title="Niedostępna">
-                  <input type="checkbox" name="Odmiana" value="Burlat" disabled />
-                  <span>Burlat ❌</span>
+                <label class="variety-chip">
+                  <input type="checkbox" name="Odmiana" value="Burlat" />
+                  <span>Burlat - 15 zł/kg ✅</span>
                 </label>
-                <label class="variety-chip variety-disabled" title="Dostępna wkrótce">
-                  <input type="checkbox" name="Odmiana" value="Kordia" disabled />
-                  <span>Kordia 🔜</span>
+                <label class="variety-chip">
+                  <input type="checkbox" name="Odmiana" value="Kordia" />
+                  <span>Kordia - 15 zł/kg ✅</span>
                 </label>
                 <label class="variety-chip variety-disabled" title="Dostępna wkrótce">
                   <input type="checkbox" name="Odmiana" value="Techlovan" disabled />
@@ -500,15 +506,15 @@
               <p>Odmiana o intensywnie czerwonych, dużych owocach. Wyjątkowo słodka i aromatyczna - idealna do bezpośredniego jedzenia.</p>
               <span class="season">📅 Czerwiec-Lipiec</span>
             </div>
-            <div class="variety-card variety-card-soon reveal">
-              <div class="variety-soon-badge">Niedostępna</div>
+            <div class="variety-card variety-card-available reveal">
+              <div class="variety-price-badge">15 zł/kg</div>
               <div class="variety-emoji">🍒</div>
               <h5>Burlat</h5>
               <p>Wczesna odmiana o dużych, ciemnoczerwonych owocach. Słodka i soczysta.</p>
               <span class="season">📅 Czerwiec</span>
             </div>
-            <div class="variety-card variety-card-soon reveal">
-              <div class="variety-soon-badge">Wkrótce</div>
+            <div class="variety-card variety-card-available reveal">
+              <div class="variety-price-badge">15 zł/kg</div>
               <div class="variety-emoji">🍒</div>
               <h5>Kordia</h5>
               <p>Najchętniej kupowana odmiana. Duże, twarde owoce o wybornym smaku.</p>
