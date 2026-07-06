@@ -1772,6 +1772,60 @@ textarea.form-input {
   color: #a89e94;
 }
 
+/* Phone-first order box */
+.order-call-primary {
+  margin-bottom: 2rem;
+}
+
+.order-call-box {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, var(--dark-900), var(--dark-800));
+  border-radius: 24px;
+  color: #fff;
+  box-shadow: 0 8px 40px rgba(0,0,0,.2);
+}
+
+.order-call-icon {
+  font-size: 3rem;
+  margin-bottom: .5rem;
+}
+
+.order-call-box h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: .5rem;
+  color: #fff;
+}
+
+.order-call-box p {
+  color: rgba(255,255,255,.7);
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+.order-call-hint {
+  margin-top: 1rem;
+  font-size: .9rem;
+  color: var(--leaf-400);
+  font-weight: 600;
+}
+
+.form-alternative {
+  margin-bottom: 1.5rem;
+}
+
+/* Fruit price tag inside card */
+.fruit-price-tag {
+  font-size: .75rem;
+  font-weight: 800;
+  color: var(--leaf-500);
+  background: rgba(109, 191, 92, .12);
+  padding: .15rem .6rem;
+  border-radius: 50px;
+  letter-spacing: .02em;
+}
+
 /* Thank You Overlay */
 .thank-you-overlay {
   display: none;

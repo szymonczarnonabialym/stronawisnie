@@ -83,15 +83,28 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Product",
+                "name": "Wiśnie Łutówka",
+                "description": "Tradycyjna polska odmiana wiśni. Aromatyczna i soczysta, idealna na przetwory, nalewki i ciasta.",
+                "category": "Wiśnie",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "10",
+                  "priceCurrency": "PLN",
+                  "unitCode": "KGM",
+                  "availability": "https://schema.org/InStock"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
                 "name": "Czereśnie Vanda",
                 "description": "Odmiana o pięknych, dużych owocach. Słodka, soczysta i aromatyczna.",
                 "category": "Czereśnie",
                 "offers": {
                   "@type": "Offer",
-                  "price": "15",
-                  "priceCurrency": "PLN",
-                  "unitCode": "KGM",
-                  "availability": "https://schema.org/InStock"
+                  "availability": "https://schema.org/OutOfStock"
                 }
               }
             },
@@ -100,14 +113,11 @@
               "itemOffered": {
                 "@type": "Product",
                 "name": "Czereśnie Vega",
-                "description": "Odmiana o intensywnie czerwonych, dużych owocach. Wyjątkowo słodka i aromatyczna.",
+                "description": "Odmiana o intensywnie czerwonych, dużych owocach.",
                 "category": "Czereśnie",
                 "offers": {
                   "@type": "Offer",
-                  "price": "15",
-                  "priceCurrency": "PLN",
-                  "unitCode": "KGM",
-                  "availability": "https://schema.org/InStock"
+                  "availability": "https://schema.org/OutOfStock"
                 }
               }
             },
@@ -116,14 +126,11 @@
               "itemOffered": {
                 "@type": "Product",
                 "name": "Czereśnie Burlat",
-                "description": "Wczesna odmiana czereśni o dużych, ciemnoczerwonych owocach. Słodka i soczysta.",
+                "description": "Wczesna odmiana czereśni o dużych, ciemnoczerwonych owocach.",
                 "category": "Czereśnie",
                 "offers": {
                   "@type": "Offer",
-                  "price": "15",
-                  "priceCurrency": "PLN",
-                  "unitCode": "KGM",
-                  "availability": "https://schema.org/InStock"
+                  "availability": "https://schema.org/OutOfStock"
                 }
               }
             },
@@ -136,23 +143,7 @@
                 "category": "Czereśnie",
                 "offers": {
                   "@type": "Offer",
-                  "price": "15",
-                  "priceCurrency": "PLN",
-                  "unitCode": "KGM",
-                  "availability": "https://schema.org/InStock"
-                }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Czereśnie Techlovan",
-                "description": "Późna odmiana o ciemnoczerwonych, chrupiących owocach. Doskonała trwałość.",
-                "category": "Czereśnie",
-                "offers": {
-                  "@type": "Offer",
-                  "availability": "https://schema.org/PreOrder"
+                  "availability": "https://schema.org/OutOfStock"
                 }
               }
             }
@@ -189,6 +180,7 @@
         <a href="#oferta" class="nav-link" data-section="oferta">Oferta</a>
         <a href="#o-nas" class="nav-link" data-section="o-nas">O nas</a>
         <a href="#kontakt" class="nav-link" data-section="kontakt">Kontakt</a>
+        <a href="praca.html" class="nav-link">Praca</a>
         <button class="nav-cta" onclick="document.getElementById('zamowienie').scrollIntoView({behavior:'smooth'})">
           🛒 Zamów teraz
         </button>
@@ -265,16 +257,37 @@
     </div>
   </section>
 
-  <!-- ═══════ FORMULARZ ZAMÓWIENIA ═══════ -->
+  <!-- ═══════ ZAMÓWIENIE ═══════ -->
   <section class="order-section section" id="zamowienie">
     <div class="container">
       <div class="section-header reveal">
         <div class="section-tag">🛒 Złóż zamówienie</div>
-        <h2 class="section-title">Zamów świeże owoce<br />prosto z sadu</h2>
+        <h2 class="section-title">Zamów świeże wiśnie<br />prosto z sadu</h2>
         <p class="section-desc">
-          Wypełnij krótki formularz, a my odezwiemy się do Ciebie z potwierdzeniem.
-          Zrywamy owoce wyłącznie na Twoje zamówienie!
+          Najszybciej zamówisz telefonicznie! Możesz też wypełnić formularz poniżej.
         </p>
+      </div>
+
+      <!-- TELEFON - GŁÓWNA OPCJA -->
+      <div class="order-call-primary reveal">
+        <div class="order-call-box">
+          <div class="order-call-icon">📞</div>
+          <h3>Zadzwoń i zamów</h3>
+          <p>Najszybszy sposób na zamówienie świeżych wiśni. Odbieramy codziennie!</p>
+          <a href="tel:+48574340571" class="btn btn-primary btn-hero-order">
+            📞 574 340 571
+          </a>
+          <p class="order-call-hint">🚚 Od 5 kg dowozimy prosto pod Twoje drzwi!</p>
+        </div>
+      </div>
+
+      <!-- FORMULARZ - OPCJA ALTERNATYWNA -->
+      <div class="form-alternative reveal">
+        <div class="form-or-divider">
+          <span class="form-or-line"></span>
+          <span class="form-or-text">lub zamów przez formularz</span>
+          <span class="form-or-line"></span>
+        </div>
       </div>
 
       <div class="order-form-wrapper reveal">
@@ -289,47 +302,52 @@
           <input type="text" name="_honey" style="display:none" />
 
           <div class="form-grid">
-            <!-- Gatunek - tylko czereśnie aktywne -->
+            <!-- Gatunek - tylko wiśnie aktywne -->
             <div class="form-group form-group-full">
               <label class="form-label">Jaki owoc chcesz zamówić?</label>
               <div class="fruit-selector">
                 <label class="fruit-option">
-                  <input type="checkbox" name="Owoc" value="Czereśnie" checked />
-                  <span class="fruit-card">
-                    <span class="fruit-emoji">🍒</span>
-                    <span class="fruit-name">Czereśnie</span>
-                  </span>
-                </label>
-                <label class="fruit-option fruit-disabled" title="Wiśnie będą dostępne wkrótce">
-                  <input type="checkbox" name="Owoc" value="Wiśnie" disabled />
+                  <input type="checkbox" name="Owoc" value="Wiśnie" checked />
                   <span class="fruit-card">
                     <span class="fruit-emoji">🍒</span>
                     <span class="fruit-name">Wiśnie</span>
-                    <span class="fruit-soon">Wkrótce dostępne</span>
+                    <span class="fruit-price-tag">10 zł/kg</span>
+                  </span>
+                </label>
+                <label class="fruit-option fruit-disabled" title="Czereśnie - sezon zakończony">
+                  <input type="checkbox" name="Owoc" value="Czereśnie" disabled />
+                  <span class="fruit-card">
+                    <span class="fruit-emoji">🍒</span>
+                    <span class="fruit-name">Czereśnie</span>
+                    <span class="fruit-soon">Sezon zakończony</span>
                   </span>
                 </label>
               </div>
             </div>
 
-            <!-- Odmiana czereśni -->
+            <!-- Odmiana -->
             <div class="form-group form-group-full">
               <label class="form-label">Odmiana (opcjonalnie)</label>
               <div class="variety-selector">
                 <label class="variety-chip">
-                  <input type="checkbox" name="Odmiana" value="Vanda" />
-                  <span>Vanda - 15 zł/kg ✅</span>
+                  <input type="checkbox" name="Odmiana" value="Łutówka" />
+                  <span>Łutówka - 10 zł/kg ✅</span>
                 </label>
-                <label class="variety-chip">
-                  <input type="checkbox" name="Odmiana" value="Vega" />
-                  <span>Vega - 15 zł/kg ✅</span>
+                <label class="variety-chip variety-disabled" title="Sezon zakończony">
+                  <input type="checkbox" name="Odmiana" value="Vanda" disabled />
+                  <span>Vanda ❌</span>
                 </label>
-                <label class="variety-chip">
-                  <input type="checkbox" name="Odmiana" value="Burlat" />
-                  <span>Burlat - 15 zł/kg ✅</span>
+                <label class="variety-chip variety-disabled" title="Sezon zakończony">
+                  <input type="checkbox" name="Odmiana" value="Vega" disabled />
+                  <span>Vega ❌</span>
                 </label>
-                <label class="variety-chip">
-                  <input type="checkbox" name="Odmiana" value="Kordia" />
-                  <span>Kordia - 15 zł/kg ✅</span>
+                <label class="variety-chip variety-disabled" title="Sezon zakończony">
+                  <input type="checkbox" name="Odmiana" value="Burlat" disabled />
+                  <span>Burlat ❌</span>
+                </label>
+                <label class="variety-chip variety-disabled" title="Sezon zakończony">
+                  <input type="checkbox" name="Odmiana" value="Kordia" disabled />
+                  <span>Kordia ❌</span>
                 </label>
                 <label class="variety-chip variety-disabled" title="Dostępna wkrótce">
                   <input type="checkbox" name="Odmiana" value="Techlovan" disabled />
@@ -407,18 +425,6 @@
           <p class="form-disclaimer">
             Odezwiemy się telefonicznie w celu potwierdzenia zamówienia i ustalenia szczegółów.
           </p>
-
-          <div class="form-or-call">
-            <div class="form-or-divider">
-              <span class="form-or-line"></span>
-              <span class="form-or-text">lub</span>
-              <span class="form-or-line"></span>
-            </div>
-            <a href="tel:+48574340571" class="btn btn-call">
-              📞 Wolisz zadzwonić? 574 340 571
-            </a>
-            <p class="form-call-hint">Zamów telefonicznie - szybko i bez wypełniania formularza</p>
-          </div>
         </form>
       </div>
     </div>
@@ -436,85 +442,90 @@
         </p>
       </div>
 
-      <!-- Tabs - wiśnie ukryte na razie -->
+      <!-- Tabs -->
       <div class="tabs-nav reveal" role="tablist">
-        <button class="tab-btn active" role="tab" data-tab="czeresnie" id="tab-czeresnie" aria-selected="true" aria-controls="panel-czeresnie">
-          <span class="tab-icon">🍒</span>
-          <span>Czereśnie</span>
-        </button>
-        <!-- Wiśnie ukryte - odkomentuj gdy będą dostępne
-        <button class="tab-btn" role="tab" data-tab="wisnie" id="tab-wisnie" aria-selected="false" aria-controls="panel-wisnie">
+        <button class="tab-btn active" role="tab" data-tab="wisnie" id="tab-wisnie" aria-selected="true" aria-controls="panel-wisnie">
           <span class="tab-icon">🍒</span>
           <span>Wiśnie</span>
         </button>
-        -->
+        <button class="tab-btn" role="tab" data-tab="czeresnie" id="tab-czeresnie" aria-selected="false" aria-controls="panel-czeresnie">
+          <span class="tab-icon">🍒</span>
+          <span>Czereśnie</span>
+        </button>
       </div>
 
-      <!-- Panel: Czereśnie -->
-      <div class="tab-panel active" id="panel-czeresnie" role="tabpanel" aria-labelledby="tab-czeresnie">
+      <!-- Panel: Wiśnie (aktywny) -->
+      <div class="tab-panel active" id="panel-wisnie" role="tabpanel" aria-labelledby="tab-wisnie">
         <div class="showcase">
           <div class="showcase-image">
-            <img src="images/hero_cherries.png" alt="Świeże czereśnie z naszego sadu" />
-            <div class="badge-float">🔥 Bestseller</div>
+            <img src="images/hero_sour_cherries.png" alt="Świeże wiśnie z naszego sadu" />
+            <div class="badge-float">🍰 Idealne na przetwory</div>
           </div>
           <div class="showcase-info">
-            <span class="variety-tag">🍒 Premium Quality</span>
-            <h3>Czereśnie z naszego sadu</h3>
+            <span class="variety-tag">🍒 Tradycyjny smak</span>
+            <h3>Wiśnie z naszego sadu</h3>
             <p>
-              Nasze czereśnie to synonim doskonałości - duże, mięsiste, o intensywnym,
-              słodkim smaku. Zbieramy je ręcznie, dbając o każdy owoc. Idealne do
-              bezpośredniego jedzenia, na desery, kompoty i przetwory.
+              Nasze wiśnie to kwintesencja polskiego sadu - aromatyczne, soczyste, z
+              idealną równowagą kwaskowości i słodyczy. Doskonałe na kompoty, dżemy,
+              nalewki, ciasta i przetwory domowej roboty.
             </p>
             <div class="features-list">
               <div class="feature-item">
                 <span class="check">✓</span>
-                <span>Ręcznie zbierane w pełni dojrzałości</span>
+                <span>Idealny balans słodyczy i kwasowości</span>
               </div>
               <div class="feature-item">
                 <span class="check">✓</span>
-                <span>Uprawiane z troską o najwyższą jakość</span>
+                <span>Doskonałe na przetwory i nalewki</span>
               </div>
               <div class="feature-item">
                 <span class="check">✓</span>
-                <span>Duże, mięsiste owoce klasy premium</span>
+                <span>Bogate w witaminę C i antyoksydanty</span>
               </div>
               <div class="feature-item">
                 <span class="check">✓</span>
-                <span>Dostępne na zamówienie i na miejscu</span>
+                <span>Tylko 10 zł za kilogram!</span>
               </div>
             </div>
             <button class="btn btn-primary" onclick="document.getElementById('zamowienie').scrollIntoView({behavior:'smooth'})">
-              Zamów czereśnie 🍒
+              Zamów wiśnie 🍒
             </button>
           </div>
         </div>
 
         <div class="varieties-section">
-          <h4>Nasze odmiany czereśni</h4>
+          <h4>Nasze odmiany</h4>
           <div class="varieties-grid">
             <div class="variety-card variety-card-available reveal">
-              <div class="variety-price-badge">15 zł/kg</div>
+              <div class="variety-price-badge">10 zł/kg</div>
+              <div class="variety-emoji">🍒</div>
+              <h5>Łutówka</h5>
+              <p>Tradycyjna polska odmiana wiśni. Aromatyczna i soczysta, idealna na przetwory, nalewki i ciasta.</p>
+              <span class="season">📅 Lipiec</span>
+            </div>
+            <div class="variety-card variety-card-soon reveal">
+              <div class="variety-soon-badge">Sezon zakończony</div>
               <div class="variety-emoji">🍒</div>
               <h5>Vanda</h5>
-              <p>Odmiana o pięknych, dużych owocach. Słodka, soczysta i aromatyczna - doskonała na deser.</p>
+              <p>Odmiana o pięknych, dużych owocach. Słodka, soczysta i aromatyczna.</p>
               <span class="season">📅 Czerwiec-Lipiec</span>
             </div>
-            <div class="variety-card variety-card-available reveal">
-              <div class="variety-price-badge">15 zł/kg</div>
+            <div class="variety-card variety-card-soon reveal">
+              <div class="variety-soon-badge">Sezon zakończony</div>
               <div class="variety-emoji">🍒</div>
               <h5>Vega</h5>
-              <p>Odmiana o intensywnie czerwonych, dużych owocach. Wyjątkowo słodka i aromatyczna - idealna do bezpośredniego jedzenia.</p>
+              <p>Odmiana o intensywnie czerwonych, dużych owocach. Wyjątkowo słodka.</p>
               <span class="season">📅 Czerwiec-Lipiec</span>
             </div>
-            <div class="variety-card variety-card-available reveal">
-              <div class="variety-price-badge">15 zł/kg</div>
+            <div class="variety-card variety-card-soon reveal">
+              <div class="variety-soon-badge">Sezon zakończony</div>
               <div class="variety-emoji">🍒</div>
               <h5>Burlat</h5>
               <p>Wczesna odmiana o dużych, ciemnoczerwonych owocach. Słodka i soczysta.</p>
               <span class="season">📅 Czerwiec</span>
             </div>
-            <div class="variety-card variety-card-available reveal">
-              <div class="variety-price-badge">15 zł/kg</div>
+            <div class="variety-card variety-card-soon reveal">
+              <div class="variety-soon-badge">Sezon zakończony</div>
               <div class="variety-emoji">🍒</div>
               <h5>Kordia</h5>
               <p>Najchętniej kupowana odmiana. Duże, twarde owoce o wybornym smaku.</p>
@@ -524,7 +535,7 @@
               <div class="variety-soon-badge">Wkrótce</div>
               <div class="variety-emoji">🍒</div>
               <h5>Techlovan</h5>
-              <p>Późna odmiana o ciemnoczerwonych, chrupiących owocach. Doskonała trwałość i bogaty, wyrazisty smak.</p>
+              <p>Późna odmiana o ciemnoczerwonych owocach. Doskonała trwałość i bogaty smak.</p>
               <span class="season">📅 Lipiec</span>
             </div>
           </div>
