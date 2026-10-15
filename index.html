@@ -35,137 +35,64 @@
 
   <!-- JSON-LD: Dane strukturalne dla Google -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://czeresniekoscian.pl/#business",
-        "name": "Czereśnie Kościan - Sad Owocowy",
-        "description": "Rodzinny sad owocowy w Wyskoci Małej (k. Kościana) z tradycją od 1986 roku. Sprzedaż świeżych czereśni i wiśni prosto z drzewa. Dowóz od 5 kg.",
-        "url": "https://czeresniekoscian.pl",
-        "telephone": "+48574340571",
-        "email": "czeresniekoscian@gmail.com",
-        "image": "https://czeresniekoscian.pl/images/og-facebook.png",
-        "logo": "https://czeresniekoscian.pl/images/og-facebook.png",
-        "foundingDate": "1986",
-        "priceRange": "$$",
-        "currenciesAccepted": "PLN",
-        "paymentAccepted": "Gotówka, Przelew",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Wyskoć Mała 4A",
-          "addressLocality": "Wyskoć Mała",
-          "postalCode": "64-000",
-          "addressRegion": "wielkopolskie",
-          "addressCountry": "PL"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 51.9833,
-          "longitude": 16.6500
-        },
-        "areaServed": [
-          {
-            "@type": "City",
-            "name": "Kościan"
-          },
-          {
-            "@type": "State",
-            "name": "Wielkopolska"
-          }
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Owoce z sadu",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Wiśnie Łutówka",
-                "description": "Tradycyjna polska odmiana wiśni. Aromatyczna i soczysta, idealna na przetwory, nalewki i ciasta.",
-                "category": "Wiśnie",
-                "offers": {
-                  "@type": "Offer",
-                  "price": "10",
-                  "priceCurrency": "PLN",
-                  "unitCode": "KGM",
-                  "availability": "https://schema.org/InStock"
-                }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Czereśnie Vanda",
-                "description": "Odmiana o pięknych, dużych owocach. Słodka, soczysta i aromatyczna.",
-                "category": "Czereśnie",
-                "offers": {
-                  "@type": "Offer",
-                  "availability": "https://schema.org/OutOfStock"
-                }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Czereśnie Vega",
-                "description": "Odmiana o intensywnie czerwonych, dużych owocach.",
-                "category": "Czereśnie",
-                "offers": {
-                  "@type": "Offer",
-                  "availability": "https://schema.org/OutOfStock"
-                }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Czereśnie Burlat",
-                "description": "Wczesna odmiana czereśni o dużych, ciemnoczerwonych owocach.",
-                "category": "Czereśnie",
-                "offers": {
-                  "@type": "Offer",
-                  "availability": "https://schema.org/OutOfStock"
-                }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Czereśnie Kordia",
-                "description": "Najchętniej kupowana odmiana. Duże, twarde owoce o wybornym smaku.",
-                "category": "Czereśnie",
-                "offers": {
-                  "@type": "Offer",
-                  "availability": "https://schema.org/OutOfStock"
-                }
-              }
-            }
-          ]
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://czeresniekoscian.pl/#business",
+      "name": "Czereśnie Kościan - Sad Owocowy",
+      "description": "Rodzinny sad owocowy w Wyskoci Małej (k. Kościana) z tradycją od 1986 roku. Sprzedaż świeżych czereśni i wiśni prosto z drzewa. Dowóz od 5 kg.",
+      "url": "https://czeresniekoscian.pl",
+      "telephone": "+48574340571",
+      "email": "czeresniekoscian@gmail.com",
+      "image": "https://czeresniekoscian.pl/images/og-facebook.png",
+      "logo": "https://czeresniekoscian.pl/images/og-facebook.png",
+      "foundingDate": "1986",
+      "priceRange": "$",
+      "currenciesAccepted": "PLN",
+      "paymentAccepted": "Gotówka, Przelew",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Wyskoć Mała 4A",
+        "addressLocality": "Wyskoć Mała",
+        "postalCode": "64-000",
+        "addressRegion": "wielkopolskie",
+        "addressCountry": "PL"
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://czeresniekoscian.pl/#website",
-        "url": "https://czeresniekoscian.pl",
-        "name": "Czereśnie Kościan",
-        "description": "Świeże czereśnie i wiśnie prosto z sadu w Wyskoci Małej k. Kościana",
-        "inLanguage": "pl-PL"
-      }
-    ]
-  }
-  </script>
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.9833,
+        "longitude": 16.65
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Kościan"
+        },
+        {
+          "@type": "State",
+          "name": "Wielkopolska"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://czeresniekoscian.pl/#website",
+      "url": "https://czeresniekoscian.pl",
+      "name": "Czereśnie Kościan",
+      "description": "Świeże czereśnie i wiśnie prosto z sadu w Wyskoci Małej k. Kościana",
+      "inLanguage": "pl-PL"
+    }
+  ]
+}
+</script>
 
   <link rel="stylesheet" href="index.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>🍒</text></svg>" />
 </head>
 <body>
+  <div id="site-content">
 
   <!-- ═══════ HEADER ═══════ -->
   <header class="header" id="header">
@@ -202,7 +129,7 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="dot"></span>
-        Sezon 2026 - świeże zbiory!
+        Prosto z rodzinnego sadu
       </div>
       <h1 class="hero-title">
         Smak lata prosto<br />
@@ -245,7 +172,7 @@
         </div>
         <div class="stat-card reveal">
           <div class="stat-icon">🍒</div>
-          <div class="stat-value">5</div>
+          <div class="stat-value" id="offer-count">—</div>
           <div class="stat-label">Odmian owoców</div>
         </div>
         <div class="stat-card reveal">
@@ -262,7 +189,7 @@
     <div class="container">
       <div class="section-header reveal">
         <div class="section-tag">🛒 Złóż zamówienie</div>
-        <h2 class="section-title">Zamów świeże wiśnie<br />prosto z sadu</h2>
+        <h2 class="section-title">Zamów świeże owoce<br />prosto z sadu</h2>
         <p class="section-desc">
           Najszybciej zamówisz telefonicznie! Możesz też wypełnić formularz poniżej.
         </p>
@@ -273,7 +200,7 @@
         <div class="order-call-box">
           <div class="order-call-icon">📞</div>
           <h3>Zadzwoń i zamów</h3>
-          <p>Najszybszy sposób na zamówienie świeżych wiśni. Odbieramy codziennie!</p>
+          <p>Najszybszy sposób na zamówienie świeżych owoców. Odbieramy codziennie!</p>
           <a href="tel:+48574340571" class="btn btn-primary btn-hero-order">
             📞 574 340 571
           </a>
@@ -293,7 +220,9 @@
       <div class="order-form-wrapper reveal">
         <div class="order-delivery-badge">🚚 Od 5 kg dowozimy prosto pod Twoje drzwi - nie musisz wychodzić z domu!</div>
 
+        <p id="offer-status" role="status">Sprawdzamy aktualną ofertę…</p><noscript><p>Zamówienia telefoniczne: <a href="tel:+48574340571">574 340 571</a>.</p></noscript>
         <form action="https://formsubmit.co/czeresniekoscian@gmail.com" method="POST" class="order-form" id="orderForm">
+          <fieldset id="offer-order-fields" disabled style="border:0;padding:0;margin:0;min-width:0">
           <!-- Formsubmit config -->
           <input type="hidden" name="_subject" value="🍒 Nowe zamówienie ze strony czeresniekoscian.pl" />
           <input type="hidden" name="_captcha" value="false" />
@@ -305,56 +234,9 @@
             <!-- Gatunek - tylko wiśnie aktywne -->
             <div class="form-group form-group-full">
               <label class="form-label">Jaki owoc chcesz zamówić?</label>
-              <div class="fruit-selector">
-                <label class="fruit-option">
-                  <input type="checkbox" name="Owoc" value="Wiśnie" checked />
-                  <span class="fruit-card">
-                    <span class="fruit-emoji">🍒</span>
-                    <span class="fruit-name">Wiśnie</span>
-                    <span class="fruit-price-tag">10 zł/kg</span>
-                  </span>
-                </label>
-                <label class="fruit-option fruit-disabled" title="Czereśnie - sezon zakończony">
-                  <input type="checkbox" name="Owoc" value="Czereśnie" disabled />
-                  <span class="fruit-card">
-                    <span class="fruit-emoji">🍒</span>
-                    <span class="fruit-name">Czereśnie</span>
-                    <span class="fruit-soon">Sezon zakończony</span>
-                  </span>
-                </label>
-              </div>
+              <div class="fruit-selector" id="offer-fruits"></div>
             </div>
-
-            <!-- Odmiana -->
-            <div class="form-group form-group-full">
-              <label class="form-label">Odmiana (opcjonalnie)</label>
-              <div class="variety-selector">
-                <label class="variety-chip">
-                  <input type="checkbox" name="Odmiana" value="Łutówka" />
-                  <span>Łutówka - 10 zł/kg ✅</span>
-                </label>
-                <label class="variety-chip variety-disabled" title="Sezon zakończony">
-                  <input type="checkbox" name="Odmiana" value="Vanda" disabled />
-                  <span>Vanda ❌</span>
-                </label>
-                <label class="variety-chip variety-disabled" title="Sezon zakończony">
-                  <input type="checkbox" name="Odmiana" value="Vega" disabled />
-                  <span>Vega ❌</span>
-                </label>
-                <label class="variety-chip variety-disabled" title="Sezon zakończony">
-                  <input type="checkbox" name="Odmiana" value="Burlat" disabled />
-                  <span>Burlat ❌</span>
-                </label>
-                <label class="variety-chip variety-disabled" title="Sezon zakończony">
-                  <input type="checkbox" name="Odmiana" value="Kordia" disabled />
-                  <span>Kordia ❌</span>
-                </label>
-                <label class="variety-chip variety-disabled" title="Sezon zakończony">
-                  <input type="checkbox" name="Odmiana" value="Techlovan" disabled />
-                  <span>Techlovan ❌</span>
-                </label>
-              </div>
-            </div>
+            <div class="form-group form-group-full"><label class="form-label">Odmiana</label><div class="variety-selector" id="offer-varieties"></div></div>
 
             <!-- Ilość - suwak -->
             <div class="form-group form-group-full">
@@ -425,7 +307,7 @@
           <p class="form-disclaimer">
             Odezwiemy się telefonicznie w celu potwierdzenia zamówienia i ustalenia szczegółów.
           </p>
-        </form>
+        </fieldset></form>
       </div>
     </div>
   </section>
@@ -484,7 +366,7 @@
               </div>
               <div class="feature-item">
                 <span class="check">✓</span>
-                <span>Tylko 10 zł za kilogram!</span>
+                <span data-offer-summary="sour">Aktualna oferta poniżej</span>
               </div>
             </div>
             <button class="btn btn-primary" onclick="document.getElementById('zamowienie').scrollIntoView({behavior:'smooth'})">
@@ -495,71 +377,13 @@
 
         <div class="varieties-section">
           <h4>Nasze odmiany</h4>
-          <div class="varieties-grid">
-            <div class="variety-card variety-card-available reveal">
-              <div class="variety-price-badge">10 zł/kg</div>
-              <div class="variety-emoji">🍒</div>
-              <h5>Łutówka</h5>
-              <p>Tradycyjna polska odmiana wiśni. Aromatyczna i soczysta, idealna na przetwory, nalewki i ciasta.</p>
-              <span class="season">📅 Lipiec</span>
-            </div>
-          </div>
+          <div class="varieties-grid" id="offer-sour"></div>
         </div>
       </div>
 
-      <!-- Panel: Wiśnie -->
-      <div class="tab-panel" id="panel-wisnie" role="tabpanel" aria-labelledby="tab-wisnie">
-        <div class="showcase">
-          <div class="showcase-image">
-            <img src="images/hero_sour_cherries.png" alt="Świeże wiśnie z naszego sadu" />
-            <div class="badge-float">🍰 Idealne na przetwory</div>
-          </div>
-          <div class="showcase-info">
-            <span class="variety-tag">🍒 Tradycyjny smak</span>
-            <h3>Wiśnie z naszego sadu</h3>
-            <p>
-              Nasze wiśnie to kwintesencja polskiego sadu - aromatyczne, soczyste, z
-              idealną równowagą kwaskowości i słodyczy. Doskonałe na kompoty, dżemy,
-              nalewki, ciasta i przetwory domowej roboty.
-            </p>
-            <div class="features-list">
-              <div class="feature-item">
-                <span class="check">✓</span>
-                <span>Idealny balans słodyczy i kwasowości</span>
-              </div>
-              <div class="feature-item">
-                <span class="check">✓</span>
-                <span>Doskonałe na przetwory i nalewki</span>
-              </div>
-              <div class="feature-item">
-                <span class="check">✓</span>
-                <span>Bogate w witaminę C i antyoksydanty</span>
-              </div>
-              <div class="feature-item">
-                <span class="check">✓</span>
-                <span>Tradycyjna polska odmiana</span>
-              </div>
-            </div>
-            <button class="btn btn-primary" onclick="document.getElementById('zamowienie').scrollIntoView({behavior:'smooth'})">
-              Zamów wiśnie 🍒
-            </button>
-          </div>
-        </div>
 
-        <div class="varieties-section">
-          <h4>Nasza odmiana wiśni</h4>
-          <div class="varieties-grid">
-            <div class="variety-card variety-card-wide reveal">
-              <div class="variety-emoji">🍒</div>
-              <h5>Łutówka</h5>
-              <p>Królowa polskich wiśni. Duże, ciemnoczerwone owoce o charakterystycznym,
-              intensywnym smaku. Łutówka to synonim najlepszych wiśni w Polsce - wybór
-              polskich sadowników - niezawodna, obficie owocująca i po prostu najlepsza.</p>
-              <span class="season">📅 Lipiec</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="tab-panel" id="panel-czeresnie" role="tabpanel" aria-labelledby="tab-czeresnie"><div class="showcase"><div class="showcase-image"><img src="images/hero_cherries.png" alt="Czereśnie z naszego sadu" /></div><div class="showcase-info"><span class="variety-tag">🍒 Prosto z drzewa</span><h3>Czereśnie z naszego sadu</h3><p>Słodkie, soczyste owoce zbierane ręcznie. Sprawdź aktualną dostępność naszych odmian.</p><p data-offer-summary="sweet">Aktualna oferta poniżej</p><button class="btn btn-primary" onclick="document.getElementById('zamowienie').scrollIntoView({behavior:'smooth'})">Przejdź do zamówienia 🍒</button></div></div><div class="varieties-section"><h4>Nasze odmiany czereśni</h4><div class="varieties-grid" id="offer-sweet"></div></div></div>
+
     </div>
   </section>
 
@@ -716,12 +540,15 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 Czereśnie Kościan - Wszystkie prawa zastrzeżone. Stworzono z ❤️ do natury.</p>
+        <p><a href="/panel">Panel właściciela</a> · © 2026 Czereśnie Kościan - Wszystkie prawa zastrzeżone. Stworzono z ❤️ do natury.</p>
       </div>
     </div>
   </footer>
 
+  </div>
+  <main id="site-mode-screen" class="closed-season" hidden></main>
   <!-- ═══════ SCRIPTS ═══════ -->
   <script src="index.js"></script>
+  <script src="offer.js"></script>
 </body>
 </html>

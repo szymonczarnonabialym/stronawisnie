@@ -1,0 +1,9 @@
+export function seasonPage(year){
+  const season=Number.isInteger(year)&&year>=2020&&year<=2100?year:2026;
+  return new Response(`<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sezon ${season} zakończony — Czereśnie Kościan</title><link rel="canonical" href="https://czeresniekoscian.pl/"><style>
+  *{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;padding:28px;background:#fbf7ee;color:#452b2c;font-family:Georgia,serif;text-align:center}.season-card{max-width:720px}.cherries{font-size:72px;display:block;margin-bottom:28px}.brand{font:600 12px system-ui,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#7d675e}h1{font-size:clamp(34px,6vw,58px);font-weight:500;line-height:1.16;margin:22px 0 16px}p{font:20px/1.6 system-ui,sans-serif;color:#7d675e}a{display:inline-block;margin-top:60px;font:12px system-ui,sans-serif;color:#7d675e;text-underline-offset:4px}a:focus-visible{outline:3px solid #176145;outline-offset:4px}
+  </style></head><body><main class="season-card"><span class="cherries" aria-hidden="true">🍒</span><div class="brand">Czereśnie Kościan</div><h1>Sezon ${season} zakończony</h1><p>Zapraszamy w przyszłym roku!</p><a href="/panel">Panel właściciela</a></main><script>
+  async function check(){try{const r=await fetch('/api/public/offer',{cache:'no-store',signal:AbortSignal.timeout(10000)});if(r.ok&&(await r.json()).siteEnabled===true)location.reload()}catch{}}
+  setInterval(()=>{if(!document.hidden)void check()},60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)void check()});
+  </script></body></html>`,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
+}

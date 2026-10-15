@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const statValues = document.querySelectorAll('.stat-value');
 
     statValues.forEach(el => {
+      if (el.id === 'offer-count') return;
       if (el.dataset.animated) return;
 
       const rect = el.getBoundingClientRect();
