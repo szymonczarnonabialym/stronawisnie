@@ -4,10 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const fruitNames={sweet:'Czereśnie',sour:'Wiśnie'};
   const money=n=>new Intl.NumberFormat('pl-PL',{maximumFractionDigits:2}).format(n)+' zł/kg';
   const form=document.getElementById('orderForm'),fields=document.getElementById('offer-order-fields'),status=document.getElementById('offer-status');
-  let current=[],loaded=false,running=false;
+  let current=[],loaded=false,running=false,siteEnabled=true;
   const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el};
+  function showSiteMode(data){
+    siteEnabled=data.siteEnabled;
+    const screen=document.getElementById('site-mode-screen');
+    document.getElementById('site-content').hidden=!siteEnabled;screen.hidden=siteEnabled;
+    if(!siteEnabled){
+      const card=node('div',undefined,'closed-season-card'),link=node('a','Panel właściciela');link.href='/panel';
+      card.append(node('span','🍒','closed-season-cherries'),node('div','Czereśnie Kościan','closed-season-brand'),node('h1',`Sezon ${data.season} zakończony`),node('p','Zapraszamy w przyszłym roku!'),link);screen.replaceChildren(card);
+      document.title=`Sezon ${data.season} zakończony — Czereśnie Kościan`;fields.disabled=true;current=[];loaded=true;window.scrollTo(0,0);
+    }else{document.title='Czereśnie Kościan - Świeże Czereśnie i Wiśnie Prosto z Sadu';window.dispatchEvent(new Event('scroll'))}
+  }
   function render(data){
     const items=data.items;
+    if(typeof data.siteEnabled!=='boolean'||!Number.isInteger(data.season)||data.season<2020||data.season>2100)throw new Error('Invalid site mode');
+    showSiteMode(data);if(!siteEnabled)return;
     // Reject incomplete or unexpected responses rather than display misleading prices.
     if(!Array.isArray(items)||items.length>40||typeof data.message!=='string'||!items.every(i=>typeof i.id==='string'&&typeof i.name==='string'&&i.name.length<=80&&Object.hasOwn(fruitNames,i.fruit)&&Object.hasOwn(labels,i.status)&&(i.pricePerKg===null||(Number.isFinite(i.pricePerKg)&&i.pricePerKg>0))&&(i.status!=='available'||i.pricePerKg!==null)))throw new Error('Invalid offer');
     const selected=new Set([...form.querySelectorAll('[name="Odmiana"]:checked')].map(i=>i.dataset.offerId));
@@ -39,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(running)return false;running=true;try{const r=await fetch('/api/public/offer',{cache:'no-store',signal:AbortSignal.timeout(10000)});if(!r.ok)throw new Error('Offer unavailable');render(await r.json());return true}catch{unavailable();return false}finally{running=false}
   }
   form.addEventListener('submit',e=>{
-    if(!loaded||!current.some(i=>i.status==='available')){e.preventDefault();return}
+    if(!loaded||!siteEnabled||!current.some(i=>i.status==='available')){e.preventDefault();return}
     if(!form.querySelector('[name="Owoc"]:checked')){e.preventDefault();status.textContent='Wybierz co najmniej jeden dostępny gatunek owoców.';return}
     // Revalidate just before handing the existing order form to Formsubmit.
     e.preventDefault();fields.disabled=true;

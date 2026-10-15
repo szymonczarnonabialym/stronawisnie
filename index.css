@@ -2191,3 +2191,5 @@ textarea.form-input {
     font-size: .9rem;
   }
 }
+
+.closed-season:not([hidden]){min-height:100svh;display:grid;place-items:center;padding:28px;background:#fbf7ee;color:#452b2c;text-align:center}.closed-season-card{max-width:720px}.closed-season-cherries{font-size:72px;display:block;margin-bottom:28px}.closed-season-brand{font:600 12px system-ui,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#7d675e}.closed-season h1{font:500 clamp(34px,6vw,58px)/1.16 Georgia,serif;margin:22px 0 16px}.closed-season p{font:20px/1.6 system-ui,sans-serif;color:#7d675e}.closed-season a{display:inline-block;margin-top:60px;font:12px system-ui,sans-serif;color:#7d675e;text-decoration:underline;text-underline-offset:4px}

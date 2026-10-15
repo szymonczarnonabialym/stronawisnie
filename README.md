@@ -9,6 +9,8 @@ Strona pozostaje w `stronawisnie`. Prywatny rejestr i baza pozostają w `SAD2026
 
 Zmiana cen w panelu nie wymaga commita ani ponownego wdrożenia. Nie zmienia cen sprzedaży zapisanych w dzienniku. Strona odświeża ofertę co minutę i po powrocie do karty; formularz ponownie sprawdza ofertę przed wysłaniem. Podczas awarii lub przed pierwszą publikacją zamówienia online są wyłączone, a strona wskazuje numer telefonu. Zamówienia nadal korzystają z dotychczasowego Formsubmit — ich odbiór i obsługa nie zostały przeniesione do panelu. Nie wysyłaj rzeczywistego zamówienia w ramach testu.
 
+W panelu jest przełącznik **Strona włączona** oraz **Rok sezonu**. Wyłącz przełącznik i kliknij **Opublikuj na stronie**, aby całą publiczną stronę zastąpić ekranem „Sezon 2026 zakończony — Zapraszamy w przyszłym roku!”. Panel `/panel` działa nadal. Worker zwraca ekran sezonowy bezpośrednio dla stron HTML (także `/praca`), a publiczne API przestaje zwracać ofertę. Ceny i odmiany pozostają w prywatnym zapisie i wracają po ponownym włączeniu. Zwykłe odświeżenie od razu pobiera nowy tryb; już otwarte karty sprawdzają go co minutę i po powrocie do karty. Ekran sezonowy także automatycznie wraca do strony po włączeniu. Brak cache dla ekranu sezonowego i API zapobiega utknięciu w starym trybie.
+
 ## Kolejność uruchomienia w Cloudflare
 
 1. Najpierw wdróż zmiany w `SAD2026`, zachowując nazwę Workera `sad2026`, binding `DB` i sekret `SAD_LOGIN_CONFIG`. Komendy: `npm run build:cloudflare` oraz `npx wrangler deploy --config dist/server/wrangler.json`. Nie zmieniaj istniejącej bazy i nie przenoś sekretów do GitHub.
