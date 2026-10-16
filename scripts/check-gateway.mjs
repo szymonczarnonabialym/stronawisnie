@@ -11,7 +11,7 @@ assert.equal(forwarded.url,request.url);assert.equal(forwarded.headers.get('Cook
 const www=await worker.fetch(new Request('https://www.czeresniekoscian.pl/praca.html?x=1'),env);assert.equal(www.status,308);assert.equal(www.headers.get('Location'),'https://czeresniekoscian.pl/praca.html?x=1');
 const closedEnv={...env,SAD:{fetch:async r=>new URL(r.url).pathname==='/api/public/offer'?Response.json({siteEnabled:false,season:2026}):new Response('private panel')}};
 for(const path of ['/','/praca','/praca.html']){
-  const closed=await worker.fetch(new Request('https://czeresniekoscian.pl'+path),closedEnv);const html=await closed.text();assert.ok(html.includes('Sezon 2026 zakończony'));assert.ok(html.includes('Zapraszamy w przyszłym roku!'));assert.ok(!html.includes('orderForm'));assert.equal(closed.headers.get('Cache-Control'),'no-store');
+  const closed=await worker.fetch(new Request('https://czeresniekoscian.pl'+path),closedEnv);const html=await closed.text();assert.ok(html.includes('Sezon 2026 zakończony'));assert.ok(html.includes('Zapraszamy w przyszłym roku!'));assert.ok(!html.includes('orderForm'));assert.ok(!html.includes('Panel właściciela'));assert.ok(!/href=["']\/panel/.test(html));assert.equal(closed.headers.get('Cache-Control'),'no-store');
 }
 assert.equal(await (await worker.fetch(new Request('https://czeresniekoscian.pl/panel'),closedEnv)).text(),'private panel');
 assert.equal(await (await worker.fetch(new Request('https://czeresniekoscian.pl/',{method:'HEAD'}),closedEnv)).text(),'');

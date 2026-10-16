@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const screen=document.getElementById('site-mode-screen');
     document.getElementById('site-content').hidden=!siteEnabled;screen.hidden=siteEnabled;
     if(!siteEnabled){
-      const card=node('div',undefined,'closed-season-card'),link=node('a','Panel właściciela');link.href='/panel';
-      card.append(node('span','🍒','closed-season-cherries'),node('div','Czereśnie Kościan','closed-season-brand'),node('h1',`Sezon ${data.season} zakończony`),node('p','Zapraszamy w przyszłym roku!'),link);screen.replaceChildren(card);
+      const card=node('div',undefined,'closed-season-card');
+      card.append(node('span','🍒','closed-season-cherries'),node('div','Czereśnie Kościan','closed-season-brand'),node('h1',`Sezon ${data.season} zakończony`),node('p','Zapraszamy w przyszłym roku!'));screen.replaceChildren(card);
       document.title=`Sezon ${data.season} zakończony — Czereśnie Kościan`;fields.disabled=true;current=[];loaded=true;window.scrollTo(0,0);
     }else{document.title='Czereśnie Kościan - Świeże Czereśnie i Wiśnie Prosto z Sadu';window.dispatchEvent(new Event('scroll'))}
   }
