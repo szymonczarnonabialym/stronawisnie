@@ -22,20 +22,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const mainNav = document.getElementById('mainNav');
 
+  const closeMenu = () => {
+    menuToggle.classList.remove('open');
+    mainNav.classList.remove('mobile-open');
+    document.body.style.overflow = '';
+  };
+
   menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('open');
     mainNav.classList.toggle('mobile-open');
     document.body.style.overflow = mainNav.classList.contains('mobile-open') ? 'hidden' : '';
   });
 
-  // Close mobile menu on link click
-  mainNav.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      menuToggle.classList.remove('open');
-      mainNav.classList.remove('mobile-open');
-      document.body.style.overflow = '';
-    });
+  // Close mobile menu on link or "Zamów teraz" click (not only .nav-link)
+  mainNav.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
+
+  // Never leave the page locked if the viewport grows past the mobile breakpoint
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && mainNav.classList.contains('mobile-open')) closeMenu();
+  }, { passive: true });
 
   // ─── Active Nav Link on Scroll ───
   const sections = document.querySelectorAll('section[id]');
@@ -117,8 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─── Smooth Scroll for Anchor Links ───
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      // A bare "#" (logo) means "back to top"; querySelector('#') would throw.
+      if (href === '#') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      let target = null;
+      try { target = document.querySelector(href); } catch { target = null; }
       if (target) {
         const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 80;
         const top = target.getBoundingClientRect().top + window.scrollY - offset;

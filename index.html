@@ -107,7 +107,7 @@
         <a href="#oferta" class="nav-link" data-section="oferta">Oferta</a>
         <a href="#o-nas" class="nav-link" data-section="o-nas">O nas</a>
         <a href="#kontakt" class="nav-link" data-section="kontakt">Kontakt</a>
-        <a href="praca.html" class="nav-link">Praca</a>
+        <a href="/praca" class="nav-link">Praca</a>
         <button class="nav-cta" onclick="document.getElementById('zamowienie').scrollIntoView({behavior:'smooth'})">
           🛒 Zamów teraz
         </button>
@@ -490,7 +490,7 @@
       <div class="thank-you-icon">✅</div>
       <h2>Dziękujemy za zamówienie!</h2>
       <p>Otrzymaliśmy Twoje zgłoszenie. Odezwiemy się telefonicznie, aby potwierdzić szczegóły.</p>
-      <a href="#home" class="btn btn-primary" onclick="document.getElementById('podziekowanie').style.display='none'">
+      <a href="#home" class="btn btn-primary" onclick="document.getElementById('podziekowanie').style.display='none'; history.replaceState(null, '', location.pathname + location.search)">
         Wróć do strony głównej
       </a>
     </div>
@@ -522,8 +522,8 @@
 
         <div class="footer-col">
           <h4>Owoce</h4>
-          <a href="#" onclick="switchTab('czeresnie'); return false;">Czereśnie</a>
-          <a href="#" onclick="switchTab('wisnie'); return false;">Wiśnie</a>
+          <a href="#oferta" onclick="switchTab('czeresnie')">Czereśnie</a>
+          <a href="#oferta" onclick="switchTab('wisnie')">Wiśnie</a>
         </div>
 
         <div class="footer-col">

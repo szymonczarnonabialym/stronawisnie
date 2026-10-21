@@ -47,8 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const count=document.getElementById('offer-count');if(count)count.textContent=String(items.length);
   }
   function unavailable(){loaded=false;current=[];fields.disabled=true;status.textContent='Nie udało się sprawdzić aktualnej oferty. Zadzwoń: 574 340 571.';document.getElementById('offer-fruits').replaceChildren();document.getElementById('offer-varieties').replaceChildren();for(const fruit of ['sour','sweet']){document.getElementById('offer-'+fruit).replaceChildren(node('p','Aktualną ofertę potwierdzisz telefonicznie: 574 340 571.'));document.querySelectorAll(`[data-offer-summary="${fruit}"]`).forEach(el=>{el.textContent='Ceny i dostępność potwierdzamy telefonicznie.'})}}
-  async function refresh(){
-    if(running)return false;running=true;try{const r=await fetch('/api/public/offer',{cache:'no-store',signal:AbortSignal.timeout(10000)});if(!r.ok)throw new Error('Offer unavailable');render(await r.json());return true}catch{unavailable();return false}finally{running=false}
+  // A submit that lands during the periodic refresh waits for that refresh instead of failing.
+  let inflight=null;
+  function refresh(){
+    if(inflight)return inflight;
+    running=true;
+    inflight=(async()=>{try{const r=await fetch('/api/public/offer',{cache:'no-store',signal:AbortSignal.timeout(10000)});if(!r.ok)throw new Error('Offer unavailable');render(await r.json());return true}catch{unavailable();return false}finally{running=false;inflight=null}})();
+    return inflight;
   }
   form.addEventListener('submit',e=>{
     if(!loaded||!siteEnabled||!current.some(i=>i.status==='available')){e.preventDefault();return}
