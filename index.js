@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Never leave the page locked if the viewport grows past the mobile breakpoint
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 768 && mainNav.classList.contains('mobile-open')) closeMenu();
+    if (window.innerWidth > 1000 && mainNav.classList.contains('mobile-open')) closeMenu();
   }, { passive: true });
 
   // ─── Active Nav Link on Scroll ───
