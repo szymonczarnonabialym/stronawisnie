@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return inflight;
   }
   form.addEventListener('submit',e=>{
+    if(['localhost','127.0.0.1','::1'].includes(location.hostname)){e.preventDefault();status.textContent='To jest podgląd. Zamówienie nie zostało wysłane.';return}
     if(!loaded||!siteEnabled||!current.some(i=>i.status==='available')){e.preventDefault();return}
     if(!form.querySelector('[name="Owoc"]:checked')){e.preventDefault();status.textContent='Wybierz co najmniej jeden dostępny gatunek owoców.';return}
     // Revalidate just before handing the existing order form to Formsubmit.

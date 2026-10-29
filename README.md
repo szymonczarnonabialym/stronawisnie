@@ -1,5 +1,20 @@
 # Czereśnie Kościan — strona i panel pod jedną domeną
 
+## Lokalny podgląd — poprzedni styl z prawdziwymi zdjęciami
+
+Zachowano dotychczasowy wygląd strony: kolory, typografię, nagłówek na zdjęciu, układ sekcji i zaokrąglone przyciski. Dodano pięć zdjęć właściciela, statyczną galerię miniatur bez powiększania i usunięto zieloną kropkę z nagłówka. W tle strony są trzy czereśnie; zdjęcie owoców zastępuje też powtarzające się kwiaty przy plakietce sezonu. Poprawiono menu dla węższych ekranów i położenie plakietki.
+
+Uruchomienie:
+
+```powershell
+node scripts/build.mjs
+node scripts/preview.mjs
+```
+
+Adres: `http://127.0.0.1:5185/`. Lokalny podgląd pokazuje całą stronę również wtedy, gdy sezon na domenie jest zamknięty; odczytuje publiczną ofertę i nie wymyśla cen ani dostępności. Wysyłanie zamówień na localhostie jest zablokowane. Serwer podglądu nie zmienia danych gospodarstwa ani ustawień sezonu. Na domenie nadal obowiązuje tryb wybrany w panelu właściciela.
+
+Sprawdzono składnię JavaScript, budowanie strony, galerię miniatur, menu mobilne i brak przewijania poziomego przy szerokościach 1280 oraz 390 px.
+
 Strona pozostaje w `stronawisnie`. Prywatny rejestr i baza pozostają w `SAD2026` (Worker `sad2026`). Worker strony serwuje pliki statyczne i przekazuje wyłącznie trasy panelu/API oraz zasoby aplikacji przez Service Binding `SAD`.
 
 - `https://czeresniekoscian.pl/` — publiczna strona.
