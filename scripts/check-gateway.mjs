@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import worker,{isOrchardPath} from '../cloudflare/worker.mjs';
 for(const path of ['/panel','/panel/','/api/farm','/api/site-offer','/api/public/offer','/assets/index.js','/_next/static/index.js','/login','/sw.js','/manifest.webmanifest'])assert.ok(isOrchardPath(path),path);
-for(const path of ['/','/praca.html','/images/hero_cherries.png','/offer.js','/panel-public','/robots.txt'])assert.ok(!isOrchardPath(path),path);
+for(const path of ['/','/praca.html','/images/hero_cherries.png','/images/cherries-mark.svg','/favicon.ico','/offer.js','/panel-public','/robots.txt'])assert.ok(!isOrchardPath(path),path);
 let forwarded;
 const env={SAD:{fetch:async r=>{forwarded=r;return Response.json({ok:true})}},ASSETS:{fetch:async()=>new Response('public')}};
 assert.equal(await (await worker.fetch(new Request('https://czeresniekoscian.pl/'),env)).text(),'public');
