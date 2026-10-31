@@ -25,12 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeMenu = () => {
     menuToggle.classList.remove('open');
     mainNav.classList.remove('mobile-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   };
 
   menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('open');
     mainNav.classList.toggle('mobile-open');
+    menuToggle.setAttribute('aria-expanded', String(mainNav.classList.contains('mobile-open')));
     document.body.style.overflow = mainNav.classList.contains('mobile-open') ? 'hidden' : '';
   });
 
@@ -49,25 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link[data-section]');
 
   const updateActiveNav = () => {
-    const scrollPos = window.scrollY + 120;
-
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
-
-      if (scrollPos >= top && scrollPos < top + height) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('data-section') === id) {
-            link.classList.add('active');
-          }
-        });
-      }
+    const scrollPos = window.scrollY + 130;
+    let active = 'home';
+    sections.forEach(section => { if (section.offsetTop <= scrollPos) active = section.id; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) active = 'kontakt';
+    navLinks.forEach(link => {
+      const selected = link.dataset.section === active;
+      link.classList.toggle('active', selected);
+      if (selected) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
   };
 
   window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
 
   // ─── Tab Switching ───
   const tabButtons = document.querySelectorAll('.tab-btn');
@@ -141,65 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ─── Stat Counter Animation ───
-  const animateCounters = () => {
-    const statValues = document.querySelectorAll('.stat-value');
-
-    statValues.forEach(el => {
-      if (el.id === 'offer-count') return;
-      if (el.dataset.animated) return;
-
-      const rect = el.getBoundingClientRect();
-      if (rect.top > window.innerHeight || rect.bottom < 0) return;
-
-      el.dataset.animated = 'true';
-      const text = el.textContent;
-      const numMatch = text.match(/(\d+)/);
-
-      if (numMatch) {
-        const target = parseInt(numMatch[1]);
-        const prefix = text.substring(0, text.indexOf(numMatch[1]));
-        const suffix = text.substring(text.indexOf(numMatch[1]) + numMatch[1].length);
-        const duration = 1800;
-        const startTime = performance.now();
-
-        const easeOutExpo = t => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-
-        const tick = (now) => {
-          const elapsed = now - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const easedProgress = easeOutExpo(progress);
-          const current = Math.floor(target * easedProgress);
-
-          el.textContent = prefix + current + suffix;
-
-          if (progress < 1) {
-            requestAnimationFrame(tick);
-          } else {
-            el.textContent = text;
-          }
-        };
-
-        requestAnimationFrame(tick);
-      }
-    });
-  };
-
-  window.addEventListener('scroll', animateCounters, { passive: true });
-  setTimeout(animateCounters, 500);
-
-  // ─── Parallax Effect on Hero ───
-  const heroBg = document.querySelector('.hero-bg img');
-
-  if (heroBg) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      if (scrolled < window.innerHeight) {
-        heroBg.style.transform = `scale(${1.05 + scrolled * 0.0002}) translateY(${scrolled * 0.3}px)`;
-      }
-    }, { passive: true });
-  }
-
   // ─── Order Form: KG Slider + Delivery Logic ───
   const slider = document.getElementById('iloscSlider');
   const sliderKg = document.querySelector('.slider-kg');
@@ -223,16 +161,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (val >= 5) {
       // Delivery available
-      deliveryHint.textContent = '🚚 Darmowy dowóz dostępny!';
+      deliveryHint.textContent = 'Dowóz do około 20 km — termin i koszt do ustalenia';
       deliveryHint.classList.remove('inactive');
       deliveryOptionDowoz.classList.remove('delivery-option-disabled');
       deliveryMinNote.style.display = 'none';
-      // Keep current selection
+      radioDowoz.disabled = false;
     } else {
       // Delivery NOT available
       deliveryHint.textContent = 'Dowóz od 5 kg';
       deliveryHint.classList.add('inactive');
       deliveryOptionDowoz.classList.add('delivery-option-disabled');
+      radioDowoz.disabled = true;
       radioDowoz.checked = false;
       radioOdbior.checked = true;
       deliveryMinNote.style.display = 'block';
@@ -244,10 +183,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateAdresVisibility() {
     if (!adresGroup) return;
+    const addressInput = document.getElementById('adres');
     if (radioDowoz && radioDowoz.checked) {
       adresGroup.style.display = '';
+      addressInput.required = true;
+      addressInput.disabled = false;
     } else {
       adresGroup.style.display = 'none';
+      addressInput.required = false;
+      addressInput.disabled = true;
     }
   }
 

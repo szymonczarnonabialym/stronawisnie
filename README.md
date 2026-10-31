@@ -2,7 +2,7 @@
 
 ## Lokalny podgląd — poprzedni styl z prawdziwymi zdjęciami
 
-Zachowano dotychczasowy wygląd strony: kolory, typografię, nagłówek na zdjęciu, układ sekcji i zaokrąglone przyciski. Dodano pięć zdjęć właściciela, statyczną galerię miniatur bez powiększania i usunięto zieloną kropkę z nagłówka. W tle strony są trzy czereśnie; zdjęcie owoców zastępuje też powtarzające się kwiaty przy plakietce sezonu. Poprawiono menu dla węższych ekranów i położenie plakietki.
+Zachowano dotychczasowy wygląd strony: kolory, typografię, nagłówek na zdjęciu, układ sekcji i zaokrąglone przyciski. Pięć zdjęć owoców właściciela wykorzystano bez powtórzeń: tło, oferta czereśni i trzy statyczne miniatury w galerii. W sekcji o sadzie jest zdjęcie z traktora. Oferta wiśni nie jest ilustrowana kwiatami ani czereśniami. Usunięto animowane liczniki, powtarzające się etykiety, emoji w przyciskach, pływającą plakietkę i poświaty. Wybrany wariant 1 to biała wstęga z trzema równymi kolumnami i wyśrodkowanym tekstem: 40 lat rodzinnego sadu od 1986 roku, ręczny zbiór i sprzedaż prosto od gospodarstwa. Typografię ujednolicono do jednej rodziny Lemon Milk Pro: nagłówki, teksty, logo, przyciski, formularz, kontakt, podstrona pracy i ekran końca sezonu. Nagłówki, nazwy odmian i logo korzystają z kursywy; opisy, przyciski, formularz i dane kontaktowe ze zwykłego kroju tej samej rodziny. Owoce pojawiają się przy nazwach wiśni i czereśni w zakładkach i formularzu.
 
 Uruchomienie:
 
@@ -13,7 +13,13 @@ node scripts/preview.mjs
 
 Adres: `http://127.0.0.1:5185/`. Lokalny podgląd pokazuje całą stronę również wtedy, gdy sezon na domenie jest zamknięty; odczytuje publiczną ofertę i nie wymyśla cen ani dostępności. Wysyłanie zamówień na localhostie jest zablokowane. Serwer podglądu nie zmienia danych gospodarstwa ani ustawień sezonu. Na domenie nadal obowiązuje tryb wybrany w panelu właściciela.
 
-Sprawdzono składnię JavaScript, budowanie strony, galerię miniatur, menu mobilne i brak przewijania poziomego przy szerokościach 1280 oraz 390 px.
+Oferta jest przed formularzem, a menu wskazuje także zamówienie i zdjęcia. Formularz wymaga jednego gatunku i jednej dostępnej odmiany; nie zaznacza ich domyślnie. Podana liczba pełnych kilogramów dotyczy tej odmiany. Odbiór osobisty jest domyślny; dowóz wymaga co najmniej 5 kg i adresu. Zasięg około 20 km od Wyskoci Małej podano po informacji właściciela, a termin i koszt są do telefonicznego potwierdzenia. Link mapy prowadzi do wskazanej wizytówki Google, adres zawiera 64-000 Kościan. Przywrócono domyślną reCAPTCHA FormSubmit (usunięto `_captcha=false`) i zachowano honeypot; dokumentacja: https://formsubmit.co/documentation. Publiczne favicon.ico i znak SVG są częścią buildu.
+
+Kafelki odmian korzystają z wybranego wariantu 2: duża nazwa, indywidualny opis znanych odmian czereśni, jedna etykieta dostępności, cena z dwoma miejscami po przecinku i bordowy pasek wyboru. Kliknięcie dostępnego kafelka lub aktywacja przycisku klawiaturą wybiera gatunek oraz odmianę w formularzu i przenosi do ilości. Niedostępne odmiany nie pozwalają na wybór ani nie pokazują nieaktualnej ceny. Wybrany kafelek ma zaznaczoną ramkę; ręczna zmiana odmiany w formularzu aktualizuje zaznaczenie.
+
+Opisy Vandy, Vegi, Burlata, Kordii i Techlovana podają ogólne cechy odmian, bez gwarantowania rozmiaru konkretnego zbioru ani dat w tym gospodarstwie. Przygotowano je na podstawie [katalogu szkółek Machaj](https://www.szkolki-machaj.pl/pl/katalog-odmian/czere%C5%9Bnie) i [charakterystyki Vandy w Fruit Tech Centre](https://fruittechcentre.eu/en/fruit_catalog/view_item/1819). Dopasowanie odbywa się po nazwie i gatunku, z uwzględnieniem zapisu Těchlovan i aliasu Wanda. Nowa, nierozpoznana odmiana otrzymuje neutralny tekst do czasu uzupełnienia opisu.
+
+Publiczny kontakt jest wyśrodkowany: jeden duży link telefoniczny, poniżej e-mail, adres odbioru i link do wizytówki Google. Usunięto obramowane karty oraz powtórzony przycisk z numerem telefonu. Wszystkie elementy używają czcionki Lemon Milk Pro; układ szczegółów przechodzi do jednej kolumny na telefonie.
 
 Strona pozostaje w `stronawisnie`. Prywatny rejestr i baza pozostają w `SAD2026` (Worker `sad2026`). Worker strony serwuje pliki statyczne i przekazuje wyłącznie trasy panelu/API oraz zasoby aplikacji przez Service Binding `SAD`.
 
@@ -44,3 +50,5 @@ Repozytoria mogą pozostać osobne. Nie potrzeba CORS, tokena API w przeglądarc
 W razie problemu cofnij przypięcie domeny do zapisanej poprzedniej usługi i poprzednie wdrożenie strony. Cofnięcie samego panelu przy pozostawieniu nowej strony wyłączy zamówienia online, bo brak API oferty jest traktowany jako niedostępność. Dane gospodarstwa i tabela oferty w D1 pozostają zachowane.
 
 Dokumentacja: [Service Bindings](https://developers.cloudflare.com/workers/runtime-apis/bindings/service-bindings/), [Custom Domains](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/), [Static Assets](https://developers.cloudflare.com/workers/static-assets/binding/).
+
+Lemon Milk Pro w podglądzie pochodzi z lokalnych plików właściciela. Pliki są w images/fonts/lemon-milk-pro. Opisy używają Light z małymi literami, nagłówki Medium Italic. Jest to podgląd lokalny; warunki licencji internetowej Pro należy potwierdzić przed publikacją.
