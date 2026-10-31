@@ -96,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('change',()=>renderVarieties());
         const grid=document.getElementById('offer-'+fruit);grid.replaceChildren();if(!group.length)grid.append(node('p','Obecnie brak oferty tego gatunku.'));
         for(const item of group)grid.append(offerCard(item));
-        document.querySelectorAll(`[data-offer-summary="${fruit}"]`).forEach(el=>{el.textContent=available.length?`Dostępne odmiany: ${available.map(i=>i.name).join(', ')}. Cena od ${money(Math.min(...available.map(i=>i.pricePerKg)))}.`:'Obecnie brak dostępnych owoców tego gatunku.'});
       }
       renderVarieties(selectedId);
     }
@@ -106,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function unavailable(){
     loaded=false;current=[];fields.disabled=true;status.textContent='Nie udało się sprawdzić aktualnej oferty. Zadzwoń: 574 340 571.';fruits.replaceChildren();varieties.replaceChildren();
-    for(const fruit of ['sour','sweet']){document.getElementById('offer-'+fruit).replaceChildren(node('p','Aktualną ofertę potwierdzisz telefonicznie: 574 340 571.'));document.querySelectorAll(`[data-offer-summary="${fruit}"]`).forEach(el=>{el.textContent='Ceny i dostępność potwierdzamy telefonicznie.'})}
+    for(const fruit of ['sour','sweet'])document.getElementById('offer-'+fruit).replaceChildren(node('p','Aktualną ofertę potwierdzisz telefonicznie: 574 340 571.'));
   }
   function refresh(){
     if(inflight)return inflight;

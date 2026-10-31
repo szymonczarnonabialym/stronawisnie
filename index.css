@@ -2282,8 +2282,10 @@ textarea.form-input {
 .btn:hover, .nav-cta:hover, .tab-btn.active, .tab-btn:not(.active):hover { transform: none; box-shadow: none; }
 .tab-btn.active { border-color: var(--cherry-700); background: var(--cherry-700); }
 .tab-btn::before { content: none; }
-.showcase-text-only { display: block; max-width: 760px; margin: auto; }
-.showcase-text-only .showcase-info { padding: 0; }
+.offer-intro { max-width: 700px; margin: 0 auto 28px; text-align: center; }
+.offer-intro h3 { font: italic 600 clamp(23px,3vw,32px)/1.35 var(--font-display); color: var(--dark-800); }
+.offer-intro p { margin-top: 10px; font-size: 15px; line-height: 1.7; color: var(--dark-500); }
+.offer-varieties { margin-top: 0; }
 .about-content p { color: rgba(255,255,255,.85); }
 #szczegoly .about-content .section-title { color: var(--dark-900); }
 #szczegoly .about-content p { color: var(--dark-500); }
