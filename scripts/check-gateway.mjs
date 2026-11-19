@@ -19,4 +19,6 @@ const missingEnv={...closedEnv,ASSETS:{fetch:async r=>new URL(r.url).pathname===
 assert.equal((await worker.fetch(new Request('https://czeresniekoscian.pl/nie-ma'),missingEnv)).status,404);
 assert.ok((await (await worker.fetch(new Request('https://czeresniekoscian.pl/praca'),missingEnv)).text()).includes('Sezon 2026 zakończony'));
 assert.equal(await (await worker.fetch(new Request('https://czeresniekoscian.pl/',{method:'HEAD'}),closedEnv)).text(),'');
-console.log('PASS: public assets, private panel/API forwarding, same-origin cookies, identity header stripping, canonical hostname.');
+const securedPublic=await worker.fetch(new Request('https://czeresniekoscian.pl/'),env);assert.equal(securedPublic.headers.get('X-Content-Type-Options'),'nosniff');assert.ok(securedPublic.headers.get('Strict-Transport-Security'));assert.equal(securedPublic.headers.get('Content-Security-Policy'),"frame-ancestors 'self'");
+const cspEnv={...env,SAD:{fetch:async()=>new Response('login',{headers:{'Content-Security-Policy':"default-src 'none'"}})}};assert.equal((await worker.fetch(new Request('https://czeresniekoscian.pl/login'),cspEnv)).headers.get('Content-Security-Policy'),"default-src 'none'");
+console.log('PASS: public assets, private panel/API forwarding, same-origin cookies, identity header stripping, canonical hostname, security headers.');
